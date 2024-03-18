@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace OChat
 {
-    public partial class Form1 : Form
+    public partial class SignUpForm : UserControl
     {
-        public Form1()
+        public SignUpForm()
         {
             InitializeComponent();
+        }
+
+        public event EventHandler SignUp
+        {
+            add { btnSignUp.Click += value; }
+            remove { btnSignUp.Click -= value; }
         }
     }
 }
