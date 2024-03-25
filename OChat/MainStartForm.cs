@@ -33,8 +33,8 @@ namespace OChat
             signUpForm.SignUp += SignUp;
             signUpForm.Visible = false;
 
-            this.Controls.Add(logInForm);
-            this.Controls.Add(signUpForm);
+            Controls.Add(logInForm);
+            Controls.Add(signUpForm);
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)

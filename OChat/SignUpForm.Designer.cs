@@ -64,9 +64,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(47, 346);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 29);
+            this.label5.Size = new System.Drawing.Size(120, 29);
             this.label5.TabIndex = 17;
-            this.label5.Text = "Mật khẩu";
+            this.label5.Text = "Password";
             // 
             // textBox3
             // 
@@ -82,9 +82,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(47, 253);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 29);
+            this.label4.Size = new System.Drawing.Size(167, 29);
             this.label4.TabIndex = 15;
-            this.label4.Text = "Email";
+            this.label4.Text = "Email address";
             // 
             // textBox2
             // 
@@ -100,9 +100,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(47, 160);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 29);
+            this.label3.Size = new System.Drawing.Size(171, 29);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Số điện thoại";
+            this.label3.Text = "Phone number";
             // 
             // textBox1
             // 
@@ -118,9 +118,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(47, 75);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 29);
+            this.label2.Size = new System.Drawing.Size(130, 29);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Họ tên";
+            this.label2.Text = "Your name";
             // 
             // label1
             // 
@@ -128,9 +128,9 @@
             this.label1.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(36, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 40);
+            this.label1.Size = new System.Drawing.Size(269, 40);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Sign Up Form";
+            this.label1.Text = "Create account";
             // 
             // SignUpForm
             // 
@@ -147,7 +147,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "SignUpForm";
-            this.Size = new System.Drawing.Size(560, 500);
+            this.Size = new System.Drawing.Size(689, 500);
             this.ResumeLayout(false);
             this.PerformLayout();
 
