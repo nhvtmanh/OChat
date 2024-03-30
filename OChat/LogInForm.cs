@@ -16,17 +16,17 @@ namespace OChat
         public LogInForm()
         {
             InitializeComponent();
-            this.DoubleBuffered = true;
-            this.ResizeRedraw = true;
-            this.BackColor = ColorTranslator.FromHtml("#ffffff");
-            this.btnLogIn.BackColor = ColorTranslator.FromHtml("#2563eb");
-            this.btnLogIn.ForeColor = ColorTranslator.FromHtml("#ffffff");
-            this.btnLogIn.FlatStyle = FlatStyle.Flat;
-            this.btnLogIn.FlatAppearance.BorderSize = 0;
-            this.btnSignUp.BackColor = ColorTranslator.FromHtml("#42b72a");
-            this.btnSignUp.ForeColor = ColorTranslator.FromHtml("#ffffff");
-            this.btnSignUp.FlatStyle = FlatStyle.Flat;
-            this.btnSignUp.FlatAppearance.BorderSize = 0;
+            DoubleBuffered = true;
+            ResizeRedraw = true;
+            BackColor = ColorTranslator.FromHtml("#ffffff");
+            btnLogIn.BackColor = ColorTranslator.FromHtml("#2563eb");
+            btnLogIn.ForeColor = ColorTranslator.FromHtml("#ffffff");
+            btnLogIn.FlatStyle = FlatStyle.Flat;
+            btnLogIn.FlatAppearance.BorderSize = 0;
+            btnSignUp.BackColor = ColorTranslator.FromHtml("#42b72a");
+            btnSignUp.ForeColor = ColorTranslator.FromHtml("#ffffff");
+            btnSignUp.FlatStyle = FlatStyle.Flat;
+            btnSignUp.FlatAppearance.BorderSize = 0;
         }
 
         public event EventHandler ShowSignUpForm

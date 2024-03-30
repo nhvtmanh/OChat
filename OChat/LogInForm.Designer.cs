@@ -41,43 +41,44 @@
             // 
             // tbEmail
             // 
-            this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEmail.Location = new System.Drawing.Point(48, 150);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(323, 38);
+            this.tbEmail.Size = new System.Drawing.Size(323, 43);
             this.tbEmail.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(40, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 38);
+            this.label2.Size = new System.Drawing.Size(93, 41);
             this.label2.TabIndex = 3;
             this.label2.Text = "Email";
             // 
             // tbPassword
             // 
-            this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPassword.Location = new System.Drawing.Point(48, 260);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(323, 38);
+            this.tbPassword.Size = new System.Drawing.Size(323, 43);
             this.tbPassword.TabIndex = 6;
             this.tbPassword.UseSystemPasswordChar = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(40, 210);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 38);
+            this.label1.Size = new System.Drawing.Size(147, 41);
             this.label1.TabIndex = 5;
             this.label1.Text = "Password";
             // 
             // btnLogIn
             // 
+            this.btnLogIn.FlatAppearance.BorderSize = 0;
             this.btnLogIn.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogIn.Location = new System.Drawing.Point(47, 330);
             this.btnLogIn.Name = "btnLogIn";
@@ -88,6 +89,7 @@
             // 
             // btnSignUp
             // 
+            this.btnSignUp.FlatAppearance.BorderSize = 0;
             this.btnSignUp.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUp.Location = new System.Drawing.Point(47, 410);
             this.btnSignUp.Name = "btnSignUp";
@@ -111,9 +113,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(40, 30);
+            this.label3.Location = new System.Drawing.Point(158, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 46);
+            this.label3.Size = new System.Drawing.Size(106, 45);
             this.label3.TabIndex = 14;
             this.label3.Text = "Login";
             // 
