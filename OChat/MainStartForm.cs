@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,11 +17,23 @@ namespace OChat
         private static LogInForm logInForm;
         private static SignUpForm signUpForm;
 
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // width of ellipse
+            int nHeightEllipse // height of ellipse
+        );
+
         public MainStartForm()
         {
             InitializeComponent();
             DoubleBuffered = true;
             ResizeRedraw = true;
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
             BackColor = ColorTranslator.FromHtml("#dbeafe");
         }
 
@@ -60,31 +73,6 @@ namespace OChat
         private void SignUp(object sender, EventArgs e)
         {
             MessageBox.Show("SignUp");
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-            using (var graphicsPath = GetRoundRectPath(this.ClientRectangle, 20))
-            {
-                this.Region = new Region(graphicsPath);
-                using (var pen = new Pen(Color.Transparent, 1.6f))
-                {
-                    e.Graphics.DrawPath(pen, graphicsPath);
-                }
-            }
-        }
-
-        private GraphicsPath GetRoundRectPath(Rectangle rect, int radius)
-        {
-            var path = new GraphicsPath();
-            path.StartFigure();
-            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
-            path.AddArc(rect.Right - radius, rect.Y, radius, radius, 270, 90);
-            path.AddArc(rect.Right - radius, rect.Bottom - radius, radius, radius, 0, 90);
-            path.AddArc(rect.X, rect.Bottom - radius, radius, radius, 90, 90);
-            path.CloseFigure();
-            return path;
         }
 
         private void btnClose_Click(object sender, EventArgs e)

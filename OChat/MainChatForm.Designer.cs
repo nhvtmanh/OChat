@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace OChat
 {
@@ -42,20 +43,15 @@ namespace OChat
             this.Username = new System.Windows.Forms.Label();
             this.Avatar = new System.Windows.Forms.PictureBox();
             this.topPanel = new System.Windows.Forms.Panel();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.chatUserControl4 = new OChat.ChatUserControl();
             this.btnClose = new FontAwesome.Sharp.IconButton();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.MainPanel = new System.Windows.Forms.Panel();
+            this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.chatBox3 = new OChat.ChatBox();
             this.chatBox2 = new OChat.ChatBox();
             this.chatBox1 = new OChat.ChatBox();
-            this.ChatPanel = new System.Windows.Forms.Panel();
-            this.btnEmoji = new FontAwesome.Sharp.IconButton();
-            this.btnUploadVideo = new FontAwesome.Sharp.IconButton();
-            this.btnSend = new FontAwesome.Sharp.IconButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnUploadImage = new FontAwesome.Sharp.IconButton();
             this.leftPanel.SuspendLayout();
             this.FriendsPanel.SuspendLayout();
             this.userPanel.SuspendLayout();
@@ -63,8 +59,9 @@ namespace OChat
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).BeginInit();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            this.MainPanel.SuspendLayout();
-            this.ChatPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
+            this.splitContainer.Panel1.SuspendLayout();
+            this.splitContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // leftPanel
@@ -76,7 +73,7 @@ namespace OChat
             this.leftPanel.Location = new System.Drawing.Point(0, 0);
             this.leftPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Size = new System.Drawing.Size(340, 884);
+            this.leftPanel.Size = new System.Drawing.Size(340, 900);
             this.leftPanel.TabIndex = 0;
             // 
             // FriendsPanel
@@ -89,7 +86,7 @@ namespace OChat
             this.FriendsPanel.Location = new System.Drawing.Point(0, 140);
             this.FriendsPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FriendsPanel.Name = "FriendsPanel";
-            this.FriendsPanel.Size = new System.Drawing.Size(340, 744);
+            this.FriendsPanel.Size = new System.Drawing.Size(340, 760);
             this.FriendsPanel.TabIndex = 1;
             // 
             // chatUserControl3
@@ -180,6 +177,8 @@ namespace OChat
             // topPanel
             // 
             this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.topPanel.Controls.Add(this.tbSearch);
+            this.topPanel.Controls.Add(this.iconPictureBox1);
             this.topPanel.Controls.Add(this.chatUserControl4);
             this.topPanel.Controls.Add(this.btnClose);
             this.topPanel.Controls.Add(this.btnMinimize);
@@ -189,6 +188,30 @@ namespace OChat
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(1060, 140);
             this.topPanel.TabIndex = 1;
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSearch.Location = new System.Drawing.Point(506, 48);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(420, 43);
+            this.tbSearch.TabIndex = 9;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 43;
+            this.iconPictureBox1.Location = new System.Drawing.Point(457, 53);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(43, 43);
+            this.iconPictureBox1.TabIndex = 6;
+            this.iconPictureBox1.TabStop = false;
             // 
             // chatUserControl4
             // 
@@ -233,34 +256,22 @@ namespace OChat
             this.btnMinimize.UseVisualStyleBackColor = true;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // iconPictureBox1
+            // splitContainer
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 48;
-            this.iconPictureBox1.Location = new System.Drawing.Point(771, 48);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(69, 48);
-            this.iconPictureBox1.TabIndex = 6;
-            this.iconPictureBox1.TabStop = false;
+            this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer.Location = new System.Drawing.Point(340, 140);
+            this.splitContainer.Name = "splitContainer";
+            this.splitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // MainPanel
+            // splitContainer.Panel1
             // 
-            this.MainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
-            this.MainPanel.Controls.Add(this.chatBox3);
-            this.MainPanel.Controls.Add(this.chatBox2);
-            this.MainPanel.Controls.Add(this.chatBox1);
-            this.MainPanel.Controls.Add(this.ChatPanel);
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(340, 140);
-            this.MainPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1060, 744);
-            this.MainPanel.TabIndex = 2;
+            this.splitContainer.Panel1.AutoScroll = true;
+            this.splitContainer.Panel1.Controls.Add(this.chatBox3);
+            this.splitContainer.Panel1.Controls.Add(this.chatBox2);
+            this.splitContainer.Panel1.Controls.Add(this.chatBox1);
+            this.splitContainer.Size = new System.Drawing.Size(1060, 760);
+            this.splitContainer.SplitterDistance = 686;
+            this.splitContainer.TabIndex = 7;
             // 
             // chatBox3
             // 
@@ -268,7 +279,7 @@ namespace OChat
             this.chatBox3.Location = new System.Drawing.Point(0, 324);
             this.chatBox3.Name = "chatBox3";
             this.chatBox3.Size = new System.Drawing.Size(1060, 162);
-            this.chatBox3.TabIndex = 3;
+            this.chatBox3.TabIndex = 2;
             // 
             // chatBox2
             // 
@@ -276,7 +287,7 @@ namespace OChat
             this.chatBox2.Location = new System.Drawing.Point(0, 162);
             this.chatBox2.Name = "chatBox2";
             this.chatBox2.Size = new System.Drawing.Size(1060, 162);
-            this.chatBox2.TabIndex = 2;
+            this.chatBox2.TabIndex = 1;
             // 
             // chatBox1
             // 
@@ -284,101 +295,17 @@ namespace OChat
             this.chatBox1.Location = new System.Drawing.Point(0, 0);
             this.chatBox1.Name = "chatBox1";
             this.chatBox1.Size = new System.Drawing.Size(1060, 162);
-            this.chatBox1.TabIndex = 1;
-            // 
-            // ChatPanel
-            // 
-            this.ChatPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ChatPanel.Controls.Add(this.btnEmoji);
-            this.ChatPanel.Controls.Add(this.btnUploadVideo);
-            this.ChatPanel.Controls.Add(this.btnSend);
-            this.ChatPanel.Controls.Add(this.textBox1);
-            this.ChatPanel.Controls.Add(this.btnUploadImage);
-            this.ChatPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ChatPanel.Location = new System.Drawing.Point(0, 644);
-            this.ChatPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ChatPanel.Name = "ChatPanel";
-            this.ChatPanel.Size = new System.Drawing.Size(1060, 100);
-            this.ChatPanel.TabIndex = 0;
-            // 
-            // btnEmoji
-            // 
-            this.btnEmoji.FlatAppearance.BorderSize = 0;
-            this.btnEmoji.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmoji.IconChar = FontAwesome.Sharp.IconChar.Smile;
-            this.btnEmoji.IconColor = System.Drawing.Color.Black;
-            this.btnEmoji.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEmoji.Location = new System.Drawing.Point(924, 34);
-            this.btnEmoji.Name = "btnEmoji";
-            this.btnEmoji.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.btnEmoji.Size = new System.Drawing.Size(38, 38);
-            this.btnEmoji.TabIndex = 5;
-            this.btnEmoji.UseVisualStyleBackColor = true;
-            // 
-            // btnUploadVideo
-            // 
-            this.btnUploadVideo.FlatAppearance.BorderSize = 0;
-            this.btnUploadVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUploadVideo.IconChar = FontAwesome.Sharp.IconChar.Film;
-            this.btnUploadVideo.IconColor = System.Drawing.Color.Black;
-            this.btnUploadVideo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnUploadVideo.Location = new System.Drawing.Point(85, 20);
-            this.btnUploadVideo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUploadVideo.Name = "btnUploadVideo";
-            this.btnUploadVideo.Padding = new System.Windows.Forms.Padding(3, 5, 0, 0);
-            this.btnUploadVideo.Size = new System.Drawing.Size(60, 60);
-            this.btnUploadVideo.TabIndex = 4;
-            this.btnUploadVideo.UseVisualStyleBackColor = true;
-            this.btnUploadVideo.Click += new System.EventHandler(this.btnUploadVideo_Click);
-            // 
-            // btnSend
-            // 
-            this.btnSend.FlatAppearance.BorderSize = 0;
-            this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSend.IconChar = FontAwesome.Sharp.IconChar.PaperPlane;
-            this.btnSend.IconColor = System.Drawing.Color.Black;
-            this.btnSend.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSend.Location = new System.Drawing.Point(980, 20);
-            this.btnSend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Padding = new System.Windows.Forms.Padding(3, 5, 0, 0);
-            this.btnSend.Size = new System.Drawing.Size(60, 60);
-            this.btnSend.TabIndex = 3;
-            this.btnSend.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(160, 31);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(805, 43);
-            this.textBox1.TabIndex = 2;
-            // 
-            // btnUploadImage
-            // 
-            this.btnUploadImage.FlatAppearance.BorderSize = 0;
-            this.btnUploadImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUploadImage.IconChar = FontAwesome.Sharp.IconChar.Image;
-            this.btnUploadImage.IconColor = System.Drawing.Color.Black;
-            this.btnUploadImage.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnUploadImage.Location = new System.Drawing.Point(20, 20);
-            this.btnUploadImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUploadImage.Name = "btnUploadImage";
-            this.btnUploadImage.Padding = new System.Windows.Forms.Padding(3, 5, 0, 0);
-            this.btnUploadImage.Size = new System.Drawing.Size(60, 60);
-            this.btnUploadImage.TabIndex = 1;
-            this.btnUploadImage.UseVisualStyleBackColor = true;
+            this.chatBox1.TabIndex = 0;
             // 
             // MainChatForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1400, 884);
-            this.Controls.Add(this.MainPanel);
-            this.Controls.Add(this.iconPictureBox1);
+            this.ClientSize = new System.Drawing.Size(1400, 900);
+            this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.topPanel);
             this.Controls.Add(this.leftPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainChatForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -390,10 +317,11 @@ namespace OChat
             ((System.ComponentModel.ISupportInitialize)(this.statusImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).EndInit();
             this.topPanel.ResumeLayout(false);
+            this.topPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            this.MainPanel.ResumeLayout(false);
-            this.ChatPanel.ResumeLayout(false);
-            this.ChatPanel.PerformLayout();
+            this.splitContainer.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
+            this.splitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -408,22 +336,17 @@ namespace OChat
         private System.Windows.Forms.PictureBox statusImage;
         private System.Windows.Forms.Label Status;
         private System.Windows.Forms.Panel FriendsPanel;
-        private System.Windows.Forms.Panel MainPanel;
-        private System.Windows.Forms.Panel ChatPanel;
-        private System.Windows.Forms.TextBox textBox1;
-        private FontAwesome.Sharp.IconButton btnSend;
-        private FontAwesome.Sharp.IconButton btnUploadImage;
-        private FontAwesome.Sharp.IconButton btnUploadVideo;
         private FontAwesome.Sharp.IconButton btnClose;
         private FontAwesome.Sharp.IconButton btnMinimize;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private ChatUserControl chatUserControl4;
+        private ChatUserControl chatUserControl3;
         private ChatUserControl chatUserControl2;
         private ChatUserControl chatUserControl1;
-        private ChatUserControl chatUserControl3;
-        private ChatUserControl chatUserControl4;
+        private System.Windows.Forms.SplitContainer splitContainer;
         private ChatBox chatBox3;
         private ChatBox chatBox2;
         private ChatBox chatBox1;
-        private FontAwesome.Sharp.IconButton btnEmoji;
+        private TextBox tbSearch;
     }
 }
