@@ -205,20 +205,23 @@ namespace OChat
             // 
             // btnSend
             // 
+            this.btnSend.FlatAppearance.BorderSize = 0;
+            this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSend.IconChar = FontAwesome.Sharp.IconChar.PaperPlane;
             this.btnSend.IconColor = System.Drawing.Color.Black;
             this.btnSend.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSend.Location = new System.Drawing.Point(973, 27);
+            this.btnSend.Location = new System.Drawing.Point(980, 20);
             this.btnSend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(51, 50);
+            this.btnSend.Padding = new System.Windows.Forms.Padding(3, 5, 0, 0);
+            this.btnSend.Size = new System.Drawing.Size(60, 60);
             this.btnSend.TabIndex = 3;
             this.btnSend.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(152, 25);
+            this.textBox1.Location = new System.Drawing.Point(160, 31);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(805, 47);
