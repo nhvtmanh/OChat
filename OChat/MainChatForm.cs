@@ -34,7 +34,7 @@ namespace OChat
             DoubleBuffered = true;
             ResizeRedraw = true;
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
-            testPanel.Visible = false;
+            //testPanel.Visible = false;
             LoadMainChatForm();
         }
 
@@ -63,11 +63,11 @@ namespace OChat
 
         private void btnEmoji_Click(object sender, EventArgs e)
         {
-            testPanel.Visible = !testPanel.Visible;
-            if (testPanel.Visible)
-            {
-                testPanel.BringToFront();
-            }
+            //testPanel.Visible = !testPanel.Visible;
+            //if (testPanel.Visible)
+            //{
+            //    testPanel.BringToFront();
+            //}
         }
     }
 }
