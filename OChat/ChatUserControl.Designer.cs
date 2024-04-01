@@ -41,9 +41,9 @@
             // 
             this.Status.AutoSize = true;
             this.Status.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Status.Location = new System.Drawing.Point(178, 64);
+            this.Status.Location = new System.Drawing.Point(180, 53);
             this.Status.Name = "Status";
-            this.Status.Size = new System.Drawing.Size(81, 31);
+            this.Status.Size = new System.Drawing.Size(68, 25);
             this.Status.TabIndex = 8;
             this.Status.Text = "Online";
             // 
@@ -51,7 +51,8 @@
             // 
             this.statusImage.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("statusImage.BackgroundImage")));
             this.statusImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.statusImage.Location = new System.Drawing.Point(127, 60);
+            this.statusImage.Location = new System.Drawing.Point(128, 49);
+            this.statusImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.statusImage.Name = "statusImage";
             this.statusImage.Size = new System.Drawing.Size(45, 40);
             this.statusImage.TabIndex = 7;
@@ -60,10 +61,10 @@
             // Username
             // 
             this.Username.AutoSize = true;
-            this.Username.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Username.Location = new System.Drawing.Point(121, 20);
+            this.Username.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Username.Location = new System.Drawing.Point(122, 9);
             this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(181, 35);
+            this.Username.Size = new System.Drawing.Size(154, 30);
             this.Username.TabIndex = 6;
             this.Username.Text = "Nguyễn Mạnh";
             // 
@@ -71,7 +72,8 @@
             // 
             this.Avatar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Avatar.BackgroundImage")));
             this.Avatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Avatar.Location = new System.Drawing.Point(30, 20);
+            this.Avatar.Location = new System.Drawing.Point(30, 9);
+            this.Avatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Avatar.Name = "Avatar";
             this.Avatar.Size = new System.Drawing.Size(85, 80);
             this.Avatar.TabIndex = 5;
@@ -79,15 +81,16 @@
             // 
             // ChatUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.Status);
             this.Controls.Add(this.statusImage);
             this.Controls.Add(this.Username);
             this.Controls.Add(this.Avatar);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ChatUserControl";
-            this.Size = new System.Drawing.Size(340, 120);
+            this.Size = new System.Drawing.Size(340, 98);
             ((System.ComponentModel.ISupportInitialize)(this.statusImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).EndInit();
             this.ResumeLayout(false);
