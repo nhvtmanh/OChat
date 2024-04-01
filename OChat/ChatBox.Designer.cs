@@ -1,4 +1,6 @@
-﻿namespace OChat
+﻿using System.Drawing;
+
+namespace OChat
 {
     partial class ChatBox
     {
@@ -46,7 +48,9 @@
             this.tbChat.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.tbChat.Size = new System.Drawing.Size(880, 40);
             this.tbChat.TabIndex = 10;
-            this.tbChat.Text = resources.GetString("tbChat.Text");
+            this.tbChat.Text = "hello worldhello worldhello worldhello worldhello worldhellohello worldhello worl" +
+    "dhello worldhello worldhello worldhelloworldhello worldhello worldhello worldhel" +
+    "lo";
             this.tbChat.ContentsResized += new System.Windows.Forms.ContentsResizedEventHandler(this.tbChat_ContentsResized);
             // 
             // lbTime
