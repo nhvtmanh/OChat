@@ -47,14 +47,15 @@ namespace OChat
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.chatBox3 = new OChat.ChatBox();
+            this.chatBox2 = new OChat.ChatBox();
+            this.chatBox1 = new OChat.ChatBox();
             this.ChatPanel = new System.Windows.Forms.Panel();
+            this.btnEmoji = new FontAwesome.Sharp.IconButton();
             this.btnUploadVideo = new FontAwesome.Sharp.IconButton();
             this.btnSend = new FontAwesome.Sharp.IconButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnUploadImage = new FontAwesome.Sharp.IconButton();
-            this.chatBox1 = new OChat.ChatBox();
-            this.chatBox2 = new OChat.ChatBox();
-            this.chatBox3 = new OChat.ChatBox();
             this.leftPanel.SuspendLayout();
             this.FriendsPanel.SuspendLayout();
             this.userPanel.SuspendLayout();
@@ -261,9 +262,34 @@ namespace OChat
             this.MainPanel.Size = new System.Drawing.Size(1060, 744);
             this.MainPanel.TabIndex = 2;
             // 
+            // chatBox3
+            // 
+            this.chatBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.chatBox3.Location = new System.Drawing.Point(0, 324);
+            this.chatBox3.Name = "chatBox3";
+            this.chatBox3.Size = new System.Drawing.Size(1060, 162);
+            this.chatBox3.TabIndex = 3;
+            // 
+            // chatBox2
+            // 
+            this.chatBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.chatBox2.Location = new System.Drawing.Point(0, 162);
+            this.chatBox2.Name = "chatBox2";
+            this.chatBox2.Size = new System.Drawing.Size(1060, 162);
+            this.chatBox2.TabIndex = 2;
+            // 
+            // chatBox1
+            // 
+            this.chatBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.chatBox1.Location = new System.Drawing.Point(0, 0);
+            this.chatBox1.Name = "chatBox1";
+            this.chatBox1.Size = new System.Drawing.Size(1060, 162);
+            this.chatBox1.TabIndex = 1;
+            // 
             // ChatPanel
             // 
             this.ChatPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ChatPanel.Controls.Add(this.btnEmoji);
             this.ChatPanel.Controls.Add(this.btnUploadVideo);
             this.ChatPanel.Controls.Add(this.btnSend);
             this.ChatPanel.Controls.Add(this.textBox1);
@@ -274,6 +300,20 @@ namespace OChat
             this.ChatPanel.Name = "ChatPanel";
             this.ChatPanel.Size = new System.Drawing.Size(1060, 100);
             this.ChatPanel.TabIndex = 0;
+            // 
+            // btnEmoji
+            // 
+            this.btnEmoji.FlatAppearance.BorderSize = 0;
+            this.btnEmoji.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmoji.IconChar = FontAwesome.Sharp.IconChar.Smile;
+            this.btnEmoji.IconColor = System.Drawing.Color.Black;
+            this.btnEmoji.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEmoji.Location = new System.Drawing.Point(924, 34);
+            this.btnEmoji.Name = "btnEmoji";
+            this.btnEmoji.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.btnEmoji.Size = new System.Drawing.Size(38, 38);
+            this.btnEmoji.TabIndex = 5;
+            this.btnEmoji.UseVisualStyleBackColor = true;
             // 
             // btnUploadVideo
             // 
@@ -308,11 +348,11 @@ namespace OChat
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(160, 31);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(805, 39);
+            this.textBox1.Size = new System.Drawing.Size(805, 43);
             this.textBox1.TabIndex = 2;
             // 
             // btnUploadImage
@@ -329,30 +369,6 @@ namespace OChat
             this.btnUploadImage.Size = new System.Drawing.Size(60, 60);
             this.btnUploadImage.TabIndex = 1;
             this.btnUploadImage.UseVisualStyleBackColor = true;
-            // 
-            // chatBox1
-            // 
-            this.chatBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chatBox1.Location = new System.Drawing.Point(0, 0);
-            this.chatBox1.Name = "chatBox1";
-            this.chatBox1.Size = new System.Drawing.Size(1060, 162);
-            this.chatBox1.TabIndex = 1;
-            // 
-            // chatBox2
-            // 
-            this.chatBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chatBox2.Location = new System.Drawing.Point(0, 162);
-            this.chatBox2.Name = "chatBox2";
-            this.chatBox2.Size = new System.Drawing.Size(1060, 162);
-            this.chatBox2.TabIndex = 2;
-            // 
-            // chatBox3
-            // 
-            this.chatBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chatBox3.Location = new System.Drawing.Point(0, 324);
-            this.chatBox3.Name = "chatBox3";
-            this.chatBox3.Size = new System.Drawing.Size(1060, 162);
-            this.chatBox3.TabIndex = 3;
             // 
             // MainChatForm
             // 
@@ -408,5 +424,6 @@ namespace OChat
         private ChatBox chatBox3;
         private ChatBox chatBox2;
         private ChatBox chatBox1;
+        private FontAwesome.Sharp.IconButton btnEmoji;
     }
 }
