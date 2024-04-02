@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -116,6 +118,56 @@ namespace OChat
             var pattern = @"^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$";
             var regex = new Regex(pattern);
             return regex.IsMatch(email);
+        }
+
+        private void btnForgetPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string email = tbEmail.Text;
+            if (email == "")
+            {
+                MessageBox.Show("Please fill in your email", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!IsValidEmail(email))
+            {
+                MessageBox.Show("Invalid email", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress("21522329@gm.uit.edu.vn");
+            SmtpClient smtp = new SmtpClient();
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new NetworkCredential(mail.From.Address, "gnot ourm irgj radb");
+            smtp.Host = "smtp.gmail.com";
+
+            mail.To.Add(new MailAddress(email));
+            mail.IsBodyHtml = true;
+            mail.Subject = "OChat - Your password here";
+            string password = GetUserPassword(email);
+            mail.Body = "Your password is: " + password;
+
+            smtp.Send(mail);
+            MessageBox.Show("Your password has sent to the registered email. Please check!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private string GetUserPassword(string email)
+        {
+            string password = "";
+            string filePath = SharedVariables.fileDataUserPath;
+            string[] lines = File.ReadAllLines(filePath);
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split('|');
+                if (parts[4] == email)
+                {
+                    password = parts[2];
+                    break;
+                }
+            }
+            return password;
         }
     }
 }

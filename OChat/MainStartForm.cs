@@ -49,7 +49,6 @@ namespace OChat
             logInForm = new LogInForm(this);
             logInForm.Location = new Point(ClientSize.Width / 2 - logInForm.Size.Width / 2, ClientSize.Height / 2 - logInForm.Size.Height / 2);
             logInForm.ShowSignUpForm += btnSignUp_Click;
-            logInForm.ForgetPassword += btnForgetPass_Click;
 
             signUpForm = new SignUpForm();
             signUpForm.Location = new Point(ClientSize.Width / 2 - signUpForm.Size.Width / 2, ClientSize.Height / 2 - signUpForm.Size.Height / 2 + 30);
@@ -63,11 +62,6 @@ namespace OChat
         {
             signUpForm.Visible = true;
             logInForm.Visible = false;
-        }
-
-        private void btnForgetPass_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("ForgetPassword");
         }
 
         private void btnClose_Click(object sender, EventArgs e)

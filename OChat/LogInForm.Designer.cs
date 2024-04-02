@@ -43,7 +43,7 @@
             // 
             this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEmail.Location = new System.Drawing.Point(36, 122);
-            this.tbEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(2);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(243, 36);
             this.tbEmail.TabIndex = 4;
@@ -63,7 +63,7 @@
             // 
             this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPassword.Location = new System.Drawing.Point(36, 211);
-            this.tbPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(243, 36);
             this.tbPassword.TabIndex = 6;
@@ -85,7 +85,7 @@
             this.btnLogIn.FlatAppearance.BorderSize = 0;
             this.btnLogIn.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogIn.Location = new System.Drawing.Point(35, 268);
-            this.btnLogIn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogIn.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(243, 46);
             this.btnLogIn.TabIndex = 10;
@@ -98,7 +98,7 @@
             this.btnSignUp.FlatAppearance.BorderSize = 0;
             this.btnSignUp.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUp.Location = new System.Drawing.Point(35, 333);
-            this.btnSignUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSignUp.Margin = new System.Windows.Forms.Padding(2);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(243, 46);
             this.btnSignUp.TabIndex = 12;
@@ -116,6 +116,7 @@
             this.btnForgetPass.TabIndex = 13;
             this.btnForgetPass.TabStop = true;
             this.btnForgetPass.Text = "Forgotten password";
+            this.btnForgetPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnForgetPass_LinkClicked);
             // 
             // label3
             // 
@@ -141,7 +142,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LogInForm";
             this.Size = new System.Drawing.Size(316, 454);
             this.ResumeLayout(false);
