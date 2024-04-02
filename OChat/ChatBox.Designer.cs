@@ -48,8 +48,7 @@ namespace OChat
             this.tbChat.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.tbChat.Size = new System.Drawing.Size(880, 40);
             this.tbChat.TabIndex = 10;
-            this.tbChat.Text = "hello lsdjf lasdjfl jasdlk fjalksdjf aksdjf kjaskddf kajsdlkfj kdj jdkfj askldjf " +
-    "l sdjfl jslkdjf lksdj klsdjf lkjsldkjf gyclp ty";
+            this.tbChat.Text = resources.GetString("tbChat.Text");
             this.tbChat.ContentsResized += new System.Windows.Forms.ContentsResizedEventHandler(this.tbChat_ContentsResized);
             // 
             // lbTime
@@ -80,6 +79,7 @@ namespace OChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.tbChat);
             this.Controls.Add(this.lbTime);
             this.Controls.Add(this.myChatAvatar);
