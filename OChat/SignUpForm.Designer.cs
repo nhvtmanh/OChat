@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbPass = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbChat = new System.Windows.Forms.TextBox();
+            this.tbPhone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbAvatar = new System.Windows.Forms.PictureBox();
             this.btnSignUp = new System.Windows.Forms.Button();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.btnUploadImage = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox4
+            // tbPass
             // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(44, 390);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(241, 36);
-            this.textBox4.TabIndex = 18;
-            this.textBox4.UseSystemPasswordChar = true;
+            this.tbPass.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPass.Location = new System.Drawing.Point(44, 390);
+            this.tbPass.Margin = new System.Windows.Forms.Padding(2);
+            this.tbPass.Name = "tbPass";
+            this.tbPass.Size = new System.Drawing.Size(241, 36);
+            this.tbPass.TabIndex = 18;
+            this.tbPass.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -65,14 +65,14 @@
             this.label5.TabIndex = 17;
             this.label5.Text = "Password";
             // 
-            // textBox3
+            // tbEmail
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(44, 301);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(241, 36);
-            this.textBox3.TabIndex = 16;
+            this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEmail.Location = new System.Drawing.Point(44, 301);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(241, 36);
+            this.tbEmail.TabIndex = 16;
             // 
             // label4
             // 
@@ -85,14 +85,14 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "Email";
             // 
-            // tbChat
+            // tbPhone
             // 
-            this.tbChat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbChat.Location = new System.Drawing.Point(44, 211);
-            this.tbChat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tbChat.Name = "tbChat";
-            this.tbChat.Size = new System.Drawing.Size(241, 36);
-            this.tbChat.TabIndex = 14;
+            this.tbPhone.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPhone.Location = new System.Drawing.Point(44, 211);
+            this.tbPhone.Margin = new System.Windows.Forms.Padding(2);
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.Size = new System.Drawing.Size(241, 36);
+            this.tbPhone.TabIndex = 14;
             // 
             // label3
             // 
@@ -105,14 +105,14 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Phone number";
             // 
-            // textBox1
+            // tbName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(44, 122);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 36);
-            this.textBox1.TabIndex = 12;
+            this.tbName.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbName.Location = new System.Drawing.Point(44, 122);
+            this.tbName.Margin = new System.Windows.Forms.Padding(2);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(241, 36);
+            this.tbName.TabIndex = 12;
             // 
             // label2
             // 
@@ -136,39 +136,42 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Create account";
             // 
-            // pictureBox1
+            // pbAvatar
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(334, 122);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(188, 203);
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
+            this.pbAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbAvatar.Location = new System.Drawing.Point(334, 122);
+            this.pbAvatar.Margin = new System.Windows.Forms.Padding(2);
+            this.pbAvatar.Name = "pbAvatar";
+            this.pbAvatar.Size = new System.Drawing.Size(188, 203);
+            this.pbAvatar.TabIndex = 20;
+            this.pbAvatar.TabStop = false;
             // 
             // btnSignUp
             // 
             this.btnSignUp.FlatAppearance.BorderSize = 0;
             this.btnSignUp.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUp.Location = new System.Drawing.Point(160, 447);
-            this.btnSignUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSignUp.Margin = new System.Windows.Forms.Padding(2);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(243, 46);
             this.btnSignUp.TabIndex = 21;
             this.btnSignUp.Text = "Sign up";
             this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // btnLogIn
             // 
             this.btnLogIn.FlatAppearance.BorderSize = 0;
             this.btnLogIn.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogIn.Location = new System.Drawing.Point(160, 512);
-            this.btnLogIn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogIn.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(243, 46);
             this.btnLogIn.TabIndex = 22;
-            this.btnLogIn.Text = "Log in";
+            this.btnLogIn.Text = "Back to Log in";
             this.btnLogIn.UseVisualStyleBackColor = true;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // btnUploadImage
             // 
@@ -181,6 +184,7 @@
             this.btnUploadImage.TabIndex = 23;
             this.btnUploadImage.Text = "Choose image";
             this.btnUploadImage.UseVisualStyleBackColor = true;
+            this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
             // 
             // SignUpForm
             // 
@@ -189,36 +193,36 @@
             this.Controls.Add(this.btnUploadImage);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.btnSignUp);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.pbAvatar);
+            this.Controls.Add(this.tbPass);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.tbChat);
+            this.Controls.Add(this.tbPhone);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SignUpForm";
             this.Size = new System.Drawing.Size(566, 586);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbPass;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbChat;
+        private System.Windows.Forms.TextBox tbPhone;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbAvatar;
         private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.Button btnUploadImage;

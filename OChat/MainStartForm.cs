@@ -14,8 +14,8 @@ namespace OChat
 {
     public partial class MainStartForm : Form
     {
-        private static LogInForm logInForm;
-        private static SignUpForm signUpForm;
+        public static LogInForm logInForm;
+        public static SignUpForm signUpForm;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -54,7 +54,6 @@ namespace OChat
 
             signUpForm = new SignUpForm();
             signUpForm.Location = new Point(ClientSize.Width / 2 - signUpForm.Size.Width / 2, ClientSize.Height / 2 - signUpForm.Size.Height / 2 + 30);
-            signUpForm.SignUp += SignUp;
             signUpForm.Visible = false;
 
             Controls.Add(logInForm);
@@ -75,11 +74,6 @@ namespace OChat
         private void btnForgetPass_Click(object sender, EventArgs e)
         {
             MessageBox.Show("ForgetPassword");
-        }
-
-        private void SignUp(object sender, EventArgs e)
-        {
-            MessageBox.Show("SignUp");
         }
 
         private void btnClose_Click(object sender, EventArgs e)
