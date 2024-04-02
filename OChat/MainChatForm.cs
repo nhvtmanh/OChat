@@ -75,5 +75,17 @@ namespace OChat
             splitContainer.Visible = !splitContainer.Visible;
             albumPanel.Visible = !albumPanel.Visible;
         }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            DisplayBetweenTopPanel_MainPanel_MainSettingPanel();
+        }
+        // Call this method when to switch between TopPanel, MainPanel and MainSettingPanel
+        public void DisplayBetweenTopPanel_MainPanel_MainSettingPanel()
+        {
+            topPanel.Visible = !topPanel.Visible;
+            MainPanel.Visible = !MainPanel.Visible;
+            MainSettingPanel.Visible = !MainSettingPanel.Visible;
+        }
     }
 }

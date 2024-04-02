@@ -79,6 +79,18 @@ namespace OChat
             this.chatBox3 = new OChat.ChatBox();
             this.chatBox2 = new OChat.ChatBox();
             this.chatBox1 = new OChat.ChatBox();
+            this.rightPanel = new System.Windows.Forms.Panel();
+            this.MainSettingPanel = new System.Windows.Forms.Panel();
+            this.settingIcon = new FontAwesome.Sharp.IconPictureBox();
+            this.lbSetting = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.lbUIMode = new System.Windows.Forms.Label();
+            this.rbLight = new System.Windows.Forms.RadioButton();
+            this.rbDark = new System.Windows.Forms.RadioButton();
+            this.rbVN = new System.Windows.Forms.RadioButton();
+            this.rbEnglish = new System.Windows.Forms.RadioButton();
+            this.rbLang = new System.Windows.Forms.Label();
             this.leftPanel.SuspendLayout();
             this.friendPanel.SuspendLayout();
             this.settingPanel.SuspendLayout();
@@ -93,6 +105,9 @@ namespace OChat
             this.albumPanel.SuspendLayout();
             this.flVideoPanel.SuspendLayout();
             this.flImagePanel.SuspendLayout();
+            this.rightPanel.SuspendLayout();
+            this.MainSettingPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.settingIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // leftPanel
@@ -254,6 +269,7 @@ namespace OChat
             this.btnSetting.Text = "Setting";
             this.btnSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // userPanel
             // 
@@ -321,7 +337,7 @@ namespace OChat
             // 
             this.splitContainer.Panel1.AutoScroll = true;
             this.splitContainer.Size = new System.Drawing.Size(1060, 760);
-            this.splitContainer.SplitterDistance = 686;
+            this.splitContainer.SplitterDistance = 685;
             this.splitContainer.TabIndex = 0;
             // 
             // topPanel
@@ -334,7 +350,7 @@ namespace OChat
             this.topPanel.Controls.Add(this.btnClose);
             this.topPanel.Controls.Add(this.btnMinimize);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topPanel.Location = new System.Drawing.Point(340, 0);
+            this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(1060, 140);
@@ -428,7 +444,7 @@ namespace OChat
             this.MainPanel.Controls.Add(this.splitContainer);
             this.MainPanel.Controls.Add(this.albumPanel);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(340, 140);
+            this.MainPanel.Location = new System.Drawing.Point(0, 140);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1060, 760);
             this.MainPanel.TabIndex = 2;
@@ -605,12 +621,164 @@ namespace OChat
             this.chatBox1.Size = new System.Drawing.Size(1043, 92);
             this.chatBox1.TabIndex = 0;
             // 
+            // rightPanel
+            // 
+            this.rightPanel.Controls.Add(this.MainPanel);
+            this.rightPanel.Controls.Add(this.topPanel);
+            this.rightPanel.Controls.Add(this.MainSettingPanel);
+            this.rightPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rightPanel.Location = new System.Drawing.Point(340, 0);
+            this.rightPanel.Name = "rightPanel";
+            this.rightPanel.Size = new System.Drawing.Size(1060, 900);
+            this.rightPanel.TabIndex = 0;
+            // 
+            // MainSettingPanel
+            // 
+            this.MainSettingPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.MainSettingPanel.Controls.Add(this.rbVN);
+            this.MainSettingPanel.Controls.Add(this.rbEnglish);
+            this.MainSettingPanel.Controls.Add(this.rbLang);
+            this.MainSettingPanel.Controls.Add(this.rbDark);
+            this.MainSettingPanel.Controls.Add(this.rbLight);
+            this.MainSettingPanel.Controls.Add(this.lbUIMode);
+            this.MainSettingPanel.Controls.Add(this.iconButton1);
+            this.MainSettingPanel.Controls.Add(this.iconButton2);
+            this.MainSettingPanel.Controls.Add(this.lbSetting);
+            this.MainSettingPanel.Controls.Add(this.settingIcon);
+            this.MainSettingPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainSettingPanel.Location = new System.Drawing.Point(0, 0);
+            this.MainSettingPanel.Name = "MainSettingPanel";
+            this.MainSettingPanel.Size = new System.Drawing.Size(1060, 900);
+            this.MainSettingPanel.TabIndex = 0;
+            this.MainSettingPanel.Visible = false;
+            // 
+            // settingIcon
+            // 
+            this.settingIcon.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.settingIcon.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.settingIcon.IconChar = FontAwesome.Sharp.IconChar.Gear;
+            this.settingIcon.IconColor = System.Drawing.SystemColors.ControlText;
+            this.settingIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.settingIcon.IconSize = 80;
+            this.settingIcon.Location = new System.Drawing.Point(67, 30);
+            this.settingIcon.Name = "settingIcon";
+            this.settingIcon.Size = new System.Drawing.Size(80, 80);
+            this.settingIcon.TabIndex = 2;
+            this.settingIcon.TabStop = false;
+            // 
+            // lbSetting
+            // 
+            this.lbSetting.AutoSize = true;
+            this.lbSetting.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSetting.Location = new System.Drawing.Point(153, 35);
+            this.lbSetting.Name = "lbSetting";
+            this.lbSetting.Size = new System.Drawing.Size(159, 54);
+            this.lbSetting.TabIndex = 3;
+            this.lbSetting.Text = "Setting";
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.Location = new System.Drawing.Point(1005, 2);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.iconButton1.Size = new System.Drawing.Size(51, 50);
+            this.iconButton1.TabIndex = 7;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.iconButton2.IconSize = 30;
+            this.iconButton2.Location = new System.Drawing.Point(949, 2);
+            this.iconButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.iconButton2.Size = new System.Drawing.Size(51, 50);
+            this.iconButton2.TabIndex = 6;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            // 
+            // lbUIMode
+            // 
+            this.lbUIMode.AutoSize = true;
+            this.lbUIMode.Font = new System.Drawing.Font("Segoe UI Semibold", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUIMode.Location = new System.Drawing.Point(70, 180);
+            this.lbUIMode.Name = "lbUIMode";
+            this.lbUIMode.Size = new System.Drawing.Size(151, 45);
+            this.lbUIMode.TabIndex = 8;
+            this.lbUIMode.Text = "UI Mode";
+            // 
+            // rbLight
+            // 
+            this.rbLight.AutoSize = true;
+            this.rbLight.Checked = true;
+            this.rbLight.Font = new System.Drawing.Font("Segoe UI", 23.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbLight.Location = new System.Drawing.Point(280, 158);
+            this.rbLight.Name = "rbLight";
+            this.rbLight.Size = new System.Drawing.Size(106, 46);
+            this.rbLight.TabIndex = 9;
+            this.rbLight.Text = "Light";
+            this.rbLight.UseVisualStyleBackColor = true;
+            // 
+            // rbDark
+            // 
+            this.rbDark.AutoSize = true;
+            this.rbDark.Font = new System.Drawing.Font("Segoe UI", 23.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDark.Location = new System.Drawing.Point(280, 210);
+            this.rbDark.Name = "rbDark";
+            this.rbDark.Size = new System.Drawing.Size(100, 46);
+            this.rbDark.TabIndex = 10;
+            this.rbDark.Text = "Dark";
+            this.rbDark.UseVisualStyleBackColor = true;
+            // 
+            // rbVN
+            // 
+            this.rbVN.AutoSize = true;
+            this.rbVN.Font = new System.Drawing.Font("Segoe UI", 23.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbVN.Location = new System.Drawing.Point(280, 380);
+            this.rbVN.Name = "rbVN";
+            this.rbVN.Size = new System.Drawing.Size(196, 46);
+            this.rbVN.TabIndex = 13;
+            this.rbVN.Text = "Vietnamese";
+            this.rbVN.UseVisualStyleBackColor = true;
+            // 
+            // rbEnglish
+            // 
+            this.rbEnglish.AutoSize = true;
+            this.rbEnglish.Checked = true;
+            this.rbEnglish.Font = new System.Drawing.Font("Segoe UI", 23.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbEnglish.Location = new System.Drawing.Point(280, 328);
+            this.rbEnglish.Name = "rbEnglish";
+            this.rbEnglish.Size = new System.Drawing.Size(343, 46);
+            this.rbEnglish.TabIndex = 12;
+            this.rbEnglish.Text = "English (United States)";
+            this.rbEnglish.UseVisualStyleBackColor = true;
+            // 
+            // rbLang
+            // 
+            this.rbLang.AutoSize = true;
+            this.rbLang.Font = new System.Drawing.Font("Segoe UI Semibold", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbLang.Location = new System.Drawing.Point(70, 350);
+            this.rbLang.Name = "rbLang";
+            this.rbLang.Size = new System.Drawing.Size(166, 45);
+            this.rbLang.TabIndex = 11;
+            this.rbLang.Text = "Language";
+            // 
             // MainChatForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1400, 900);
-            this.Controls.Add(this.MainPanel);
-            this.Controls.Add(this.topPanel);
+            this.Controls.Add(this.rightPanel);
             this.Controls.Add(this.leftPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -635,6 +803,10 @@ namespace OChat
             this.albumPanel.PerformLayout();
             this.flVideoPanel.ResumeLayout(false);
             this.flImagePanel.ResumeLayout(false);
+            this.rightPanel.ResumeLayout(false);
+            this.MainSettingPanel.ResumeLayout(false);
+            this.MainSettingPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.settingIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -688,5 +860,17 @@ namespace OChat
         private ChatUserControl chatUserControl1;
         private FontAwesome.Sharp.IconButton btnSetting;
         private FontAwesome.Sharp.IconButton btnLogout;
+        private Panel rightPanel;
+        private Panel MainSettingPanel;
+        private FontAwesome.Sharp.IconPictureBox settingIcon;
+        private Label lbSetting;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private RadioButton rbLight;
+        private Label lbUIMode;
+        private RadioButton rbDark;
+        private RadioButton rbVN;
+        private RadioButton rbEnglish;
+        private Label rbLang;
     }
 }
