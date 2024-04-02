@@ -49,12 +49,10 @@ namespace OChat
             this.btnClose = new FontAwesome.Sharp.IconButton();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.imageBox1 = new OChat.ImageBox();
+            this.videoBox1 = new OChat.VideoBox();
             this.chatBox3 = new OChat.ChatBox();
             this.chatBox2 = new OChat.ChatBox();
             this.chatBox1 = new OChat.ChatBox();
-            this.emojiBox1 = new OChat.EmojiBox();
-            this.emojiBox2 = new OChat.EmojiBox();
             this.leftPanel.SuspendLayout();
             this.FriendsPanel.SuspendLayout();
             this.userPanel.SuspendLayout();
@@ -269,9 +267,7 @@ namespace OChat
             // splitContainer.Panel1
             // 
             this.splitContainer.Panel1.AutoScroll = true;
-            this.splitContainer.Panel1.Controls.Add(this.emojiBox2);
-            this.splitContainer.Panel1.Controls.Add(this.emojiBox1);
-            this.splitContainer.Panel1.Controls.Add(this.imageBox1);
+            this.splitContainer.Panel1.Controls.Add(this.videoBox1);
             this.splitContainer.Panel1.Controls.Add(this.chatBox3);
             this.splitContainer.Panel1.Controls.Add(this.chatBox2);
             this.splitContainer.Panel1.Controls.Add(this.chatBox1);
@@ -279,13 +275,13 @@ namespace OChat
             this.splitContainer.SplitterDistance = 686;
             this.splitContainer.TabIndex = 7;
             // 
-            // imageBox1
+            // videoBox1
             // 
-            this.imageBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.imageBox1.Location = new System.Drawing.Point(0, 402);
-            this.imageBox1.Name = "imageBox1";
-            this.imageBox1.Size = new System.Drawing.Size(1043, 170);
-            this.imageBox1.TabIndex = 3;
+            this.videoBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.videoBox1.Location = new System.Drawing.Point(0, 402);
+            this.videoBox1.Name = "videoBox1";
+            this.videoBox1.Size = new System.Drawing.Size(1043, 448);
+            this.videoBox1.TabIndex = 3;
             // 
             // chatBox3
             // 
@@ -313,22 +309,6 @@ namespace OChat
             this.chatBox1.Name = "chatBox1";
             this.chatBox1.Size = new System.Drawing.Size(1043, 134);
             this.chatBox1.TabIndex = 0;
-            // 
-            // emojiBox1
-            // 
-            this.emojiBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.emojiBox1.Location = new System.Drawing.Point(0, 572);
-            this.emojiBox1.Name = "emojiBox1";
-            this.emojiBox1.Size = new System.Drawing.Size(1043, 100);
-            this.emojiBox1.TabIndex = 4;
-            // 
-            // emojiBox2
-            // 
-            this.emojiBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.emojiBox2.Location = new System.Drawing.Point(0, 672);
-            this.emojiBox2.Name = "emojiBox2";
-            this.emojiBox2.Size = new System.Drawing.Size(1043, 100);
-            this.emojiBox2.TabIndex = 5;
             // 
             // MainChatForm
             // 
@@ -382,8 +362,6 @@ namespace OChat
         private ChatBox chatBox3;
         private ChatBox chatBox2;
         private ChatBox chatBox1;
-        private ImageBox imageBox1;
-        private EmojiBox emojiBox2;
-        private EmojiBox emojiBox1;
+        private VideoBox videoBox1;
     }
 }
