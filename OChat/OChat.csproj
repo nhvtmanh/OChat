@@ -69,6 +69,18 @@
     <Compile Include="ChatUserControl.Designer.cs">
       <DependentUpon>ChatUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmojiBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EmojiBox.Designer.cs">
+      <DependentUpon>EmojiBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImageBox.Designer.cs">
+      <DependentUpon>ImageBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogInForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -89,6 +101,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RoudedTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -110,6 +127,12 @@
     <EmbeddedResource Include="ChatUserControl.resx">
       <DependentUpon>ChatUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmojiBox.resx">
+      <DependentUpon>EmojiBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageBox.resx">
+      <DependentUpon>ImageBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,13 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="SendMessageUserControl.resx">
       <DependentUpon>SendMessageUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +167,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\emo1.png" />
+    <None Include="Resources\emo2.png" />
+    <None Include="Resources\emo3.png" />
+    <None Include="Resources\emo5.png" />
+    <None Include="Resources\emo4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,12 +15,12 @@ namespace OChat
         public SendMessageUserControl()
         {
             InitializeComponent();
-            //testPanel.Visible = false;
+            panelEmoji.Visible = false;
         }
 
         private void btnEmoji_Click(object sender, EventArgs e)
         {
-            //testPanel.Visible = !testPanel.Visible;
+            panelEmoji.Visible = !panelEmoji.Visible;
         }
 
         public event EventHandler BtnEmojiClick

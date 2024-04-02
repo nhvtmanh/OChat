@@ -30,11 +30,24 @@ namespace OChat
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendMessageUserControl));
             this.btnEmoji = new FontAwesome.Sharp.IconButton();
             this.btnUploadVideo = new FontAwesome.Sharp.IconButton();
             this.btnSend = new FontAwesome.Sharp.IconButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnUploadImage = new FontAwesome.Sharp.IconButton();
+            this.panelEmoji = new System.Windows.Forms.Panel();
+            this.pemo5 = new System.Windows.Forms.PictureBox();
+            this.pemo4 = new System.Windows.Forms.PictureBox();
+            this.pemo3 = new System.Windows.Forms.PictureBox();
+            this.pemo2 = new System.Windows.Forms.PictureBox();
+            this.pemo1 = new System.Windows.Forms.PictureBox();
+            this.panelEmoji.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pemo5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pemo4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pemo3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pemo2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pemo1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEmoji
@@ -106,11 +119,74 @@ namespace OChat
             this.btnUploadImage.TabIndex = 6;
             this.btnUploadImage.UseVisualStyleBackColor = true;
             // 
+            // panelEmoji
+            // 
+            this.panelEmoji.Controls.Add(this.pemo5);
+            this.panelEmoji.Controls.Add(this.pemo4);
+            this.panelEmoji.Controls.Add(this.pemo3);
+            this.panelEmoji.Controls.Add(this.pemo2);
+            this.panelEmoji.Controls.Add(this.pemo1);
+            this.panelEmoji.Location = new System.Drawing.Point(699, 16);
+            this.panelEmoji.Name = "panelEmoji";
+            this.panelEmoji.Size = new System.Drawing.Size(220, 38);
+            this.panelEmoji.TabIndex = 11;
+            // 
+            // pemo5
+            // 
+            this.pemo5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pemo5.BackgroundImage")));
+            this.pemo5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pemo5.Location = new System.Drawing.Point(179, 0);
+            this.pemo5.Name = "pemo5";
+            this.pemo5.Size = new System.Drawing.Size(38, 38);
+            this.pemo5.TabIndex = 4;
+            this.pemo5.TabStop = false;
+            // 
+            // pemo4
+            // 
+            this.pemo4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pemo4.BackgroundImage")));
+            this.pemo4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pemo4.Location = new System.Drawing.Point(135, 0);
+            this.pemo4.Name = "pemo4";
+            this.pemo4.Size = new System.Drawing.Size(38, 38);
+            this.pemo4.TabIndex = 3;
+            this.pemo4.TabStop = false;
+            // 
+            // pemo3
+            // 
+            this.pemo3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pemo3.BackgroundImage")));
+            this.pemo3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pemo3.Location = new System.Drawing.Point(91, 0);
+            this.pemo3.Name = "pemo3";
+            this.pemo3.Size = new System.Drawing.Size(38, 38);
+            this.pemo3.TabIndex = 2;
+            this.pemo3.TabStop = false;
+            // 
+            // pemo2
+            // 
+            this.pemo2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pemo2.BackgroundImage")));
+            this.pemo2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pemo2.Location = new System.Drawing.Point(47, 0);
+            this.pemo2.Name = "pemo2";
+            this.pemo2.Size = new System.Drawing.Size(38, 38);
+            this.pemo2.TabIndex = 1;
+            this.pemo2.TabStop = false;
+            // 
+            // pemo1
+            // 
+            this.pemo1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pemo1.BackgroundImage")));
+            this.pemo1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pemo1.Location = new System.Drawing.Point(3, 0);
+            this.pemo1.Name = "pemo1";
+            this.pemo1.Size = new System.Drawing.Size(38, 38);
+            this.pemo1.TabIndex = 0;
+            this.pemo1.TabStop = false;
+            // 
             // SendMessageUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.panelEmoji);
             this.Controls.Add(this.btnEmoji);
             this.Controls.Add(this.btnUploadVideo);
             this.Controls.Add(this.btnSend);
@@ -118,6 +194,12 @@ namespace OChat
             this.Controls.Add(this.btnUploadImage);
             this.Name = "SendMessageUserControl";
             this.Size = new System.Drawing.Size(1060, 74);
+            this.panelEmoji.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pemo5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pemo4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pemo3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pemo2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pemo1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,5 +212,11 @@ namespace OChat
         private FontAwesome.Sharp.IconButton btnSend;
         private System.Windows.Forms.TextBox textBox1;
         private FontAwesome.Sharp.IconButton btnUploadImage;
+        private System.Windows.Forms.Panel panelEmoji;
+        private System.Windows.Forms.PictureBox pemo1;
+        private System.Windows.Forms.PictureBox pemo5;
+        private System.Windows.Forms.PictureBox pemo4;
+        private System.Windows.Forms.PictureBox pemo3;
+        private System.Windows.Forms.PictureBox pemo2;
     }
 }
