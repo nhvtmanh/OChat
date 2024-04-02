@@ -34,7 +34,6 @@ namespace OChat
             DoubleBuffered = true;
             ResizeRedraw = true;
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
-            //testPanel.Visible = false;
             LoadMainChatForm();
         }
 
@@ -43,6 +42,7 @@ namespace OChat
             SendMessageUserControl sendMessageUserControl = new SendMessageUserControl();
             sendMessageUserControl.Dock = DockStyle.Fill;
             sendMessageUserControl.BtnEmojiClick += btnEmoji_Click;
+            splitContainer.Visible = true;
             splitContainer.Panel2.Controls.Add(sendMessageUserControl);
         }
 
@@ -68,6 +68,12 @@ namespace OChat
             //{
             //    testPanel.BringToFront();
             //}
+        }
+
+        private void btnAlbum_Click(object sender, EventArgs e)
+        {
+            splitContainer.Visible = !splitContainer.Visible;
+            albumPanel.Visible = !albumPanel.Visible;
         }
     }
 }

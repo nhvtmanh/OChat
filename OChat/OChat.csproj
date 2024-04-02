@@ -96,6 +96,12 @@
     <Compile Include="ImageBox.Designer.cs">
       <DependentUpon>ImageBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImageItem.Designer.cs">
+      <DependentUpon>ImageItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogInForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -142,6 +148,12 @@
     <Compile Include="VideoBox.Designer.cs">
       <DependentUpon>VideoBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="VideoItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VideoItem.Designer.cs">
+      <DependentUpon>VideoItem.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ChatBox.resx">
       <DependentUpon>ChatBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ImageBox.resx">
       <DependentUpon>ImageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageItem.resx">
+      <DependentUpon>ImageItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
@@ -177,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VideoBox.resx">
       <DependentUpon>VideoBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoItem.resx">
+      <DependentUpon>VideoItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
