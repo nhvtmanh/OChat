@@ -88,14 +88,10 @@ namespace OChat
 
         private void DisplayMainChatForm()
         {
-            MainChatForm mainChatForm = new MainChatForm();
-            mainChatForm.Show();
-            HideMainStartForm();
-        }
-
-        private void HideMainStartForm()
-        {
             this.parentForm.Hide();
+            MainChatForm mainChatForm = new MainChatForm();
+            mainChatForm.ShowDialog();
+            this.parentForm.Close();
         }
 
         public bool CheckCredentials(string email, string password)
@@ -107,6 +103,8 @@ namespace OChat
                 string[] parts = line.Split('|');
                 if (parts[4] == email && parts[2] == password)
                 {
+                    SharedVariables.userAvatarPath = parts[5];
+                    SharedVariables.userName = parts[1];
                     return true;
                 }
             }

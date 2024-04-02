@@ -9,5 +9,7 @@ namespace OChat
     internal class SharedVariables
     {
         public static string fileDataUserPath = "./Data/user.txt";
+        public static string userAvatarPath;
+        public static string userName;
     }
 }

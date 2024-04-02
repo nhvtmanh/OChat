@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using Image = System.Drawing.Image;
 using RichTextBox = System.Windows.Forms.RichTextBox;
 
 namespace OChat
@@ -39,6 +40,8 @@ namespace OChat
 
         private void LoadMainChatForm()
         {
+            Avatar.BackgroundImage = Image.FromFile(SharedVariables.userAvatarPath);
+            Username.Text = SharedVariables.userName;
             SendMessageUserControl sendMessageUserControl = new SendMessageUserControl();
             sendMessageUserControl.Dock = DockStyle.Fill;
             sendMessageUserControl.BtnEmojiClick += btnEmoji_Click;
@@ -86,6 +89,14 @@ namespace OChat
             topPanel.Visible = !topPanel.Visible;
             MainPanel.Visible = !MainPanel.Visible;
             MainSettingPanel.Visible = !MainSettingPanel.Visible;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainStartForm mainStartForm = new MainStartForm();
+            mainStartForm.ShowDialog();
+            this.Close();
         }
     }
 }
