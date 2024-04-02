@@ -16,7 +16,7 @@ namespace OChat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainChatForm());
+            Application.Run(new MainStartForm());
         }
     }
 }

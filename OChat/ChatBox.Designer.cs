@@ -42,15 +42,14 @@ namespace OChat
             this.tbChat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.tbChat.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbChat.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbChat.Location = new System.Drawing.Point(128, 50);
+            this.tbChat.Location = new System.Drawing.Point(128, 30);
             this.tbChat.Name = "tbChat";
             this.tbChat.ReadOnly = true;
             this.tbChat.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.tbChat.Size = new System.Drawing.Size(880, 40);
             this.tbChat.TabIndex = 10;
-            this.tbChat.Text = "hello worldhello worldhello worldhello worldhello worldhellohello worldhello worl" +
-    "dhello worldhello worldhello worldhelloworldhello worldhello worldhello worldhel" +
-    "lo";
+            this.tbChat.Text = "hello lsdjf lasdjfl jasdlk fjalksdjf aksdjf kjaskddf kajsdlkfj kdj jdkfj askldjf " +
+    "l sdjfl jslkdjf lksdj klsdjf lkjsldkjf gyclp ty";
             this.tbChat.ContentsResized += new System.Windows.Forms.ContentsResizedEventHandler(this.tbChat_ContentsResized);
             // 
             // lbTime
@@ -58,17 +57,19 @@ namespace OChat
             this.lbTime.AutoSize = true;
             this.lbTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(116)))), ((int)(((byte)(139)))));
-            this.lbTime.Location = new System.Drawing.Point(425, 10);
+            this.lbTime.Location = new System.Drawing.Point(446, 0);
             this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(168, 21);
+            this.lbTime.Padding = new System.Windows.Forms.Padding(0, 4, 0, 5);
+            this.lbTime.Size = new System.Drawing.Size(168, 30);
             this.lbTime.TabIndex = 9;
             this.lbTime.Text = "30/10/2024, 11:40 AM";
+            this.lbTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // myChatAvatar
             // 
             this.myChatAvatar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("myChatAvatar.BackgroundImage")));
             this.myChatAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.myChatAvatar.Location = new System.Drawing.Point(40, 50);
+            this.myChatAvatar.Location = new System.Drawing.Point(40, 30);
             this.myChatAvatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.myChatAvatar.Name = "myChatAvatar";
             this.myChatAvatar.Size = new System.Drawing.Size(65, 60);
@@ -83,7 +84,7 @@ namespace OChat
             this.Controls.Add(this.lbTime);
             this.Controls.Add(this.myChatAvatar);
             this.Name = "ChatBox";
-            this.Size = new System.Drawing.Size(1060, 162);
+            this.Size = new System.Drawing.Size(1060, 96);
             ((System.ComponentModel.ISupportInitialize)(this.myChatAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -40,6 +40,10 @@ namespace OChat
             this.btnLogIn.ForeColor = ColorTranslator.FromHtml("#ffffff");
             this.btnLogIn.FlatStyle = FlatStyle.Flat;
             this.btnLogIn.FlatAppearance.BorderSize = 0;
+            this.btnUploadImage.BackColor = ColorTranslator.FromHtml("#FFA52C");
+            this.btnUploadImage.ForeColor = ColorTranslator.FromHtml("#ffffff");
+            this.btnUploadImage.FlatStyle = FlatStyle.Flat;
+            this.btnUploadImage.FlatAppearance.BorderSize = 0;
         }
 
         public event EventHandler SignUp

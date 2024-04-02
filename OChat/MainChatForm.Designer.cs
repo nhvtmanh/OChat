@@ -49,9 +49,9 @@ namespace OChat
             this.btnClose = new FontAwesome.Sharp.IconButton();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.chatBox3 = new OChat.ChatBox();
-            this.chatBox2 = new OChat.ChatBox();
             this.chatBox1 = new OChat.ChatBox();
+            this.chatBox2 = new OChat.ChatBox();
+            this.chatBox3 = new OChat.ChatBox();
             this.leftPanel.SuspendLayout();
             this.FriendsPanel.SuspendLayout();
             this.userPanel.SuspendLayout();
@@ -273,29 +273,29 @@ namespace OChat
             this.splitContainer.SplitterDistance = 686;
             this.splitContainer.TabIndex = 7;
             // 
-            // chatBox3
-            // 
-            this.chatBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chatBox3.Location = new System.Drawing.Point(0, 324);
-            this.chatBox3.Name = "chatBox3";
-            this.chatBox3.Size = new System.Drawing.Size(1060, 162);
-            this.chatBox3.TabIndex = 2;
-            // 
-            // chatBox2
-            // 
-            this.chatBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chatBox2.Location = new System.Drawing.Point(0, 162);
-            this.chatBox2.Name = "chatBox2";
-            this.chatBox2.Size = new System.Drawing.Size(1060, 162);
-            this.chatBox2.TabIndex = 1;
-            // 
             // chatBox1
             // 
             this.chatBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.chatBox1.Location = new System.Drawing.Point(0, 0);
             this.chatBox1.Name = "chatBox1";
-            this.chatBox1.Size = new System.Drawing.Size(1060, 162);
+            this.chatBox1.Size = new System.Drawing.Size(1060, 94);
             this.chatBox1.TabIndex = 0;
+            // 
+            // chatBox2
+            // 
+            this.chatBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.chatBox2.Location = new System.Drawing.Point(0, 94);
+            this.chatBox2.Name = "chatBox2";
+            this.chatBox2.Size = new System.Drawing.Size(1060, 94);
+            this.chatBox2.TabIndex = 1;
+            // 
+            // chatBox3
+            // 
+            this.chatBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.chatBox3.Location = new System.Drawing.Point(0, 188);
+            this.chatBox3.Name = "chatBox3";
+            this.chatBox3.Size = new System.Drawing.Size(1060, 94);
+            this.chatBox3.TabIndex = 2;
             // 
             // MainChatForm
             // 
@@ -344,9 +344,9 @@ namespace OChat
         private ChatUserControl chatUserControl2;
         private ChatUserControl chatUserControl1;
         private System.Windows.Forms.SplitContainer splitContainer;
+        private TextBox tbSearch;
         private ChatBox chatBox3;
         private ChatBox chatBox2;
         private ChatBox chatBox1;
-        private TextBox tbSearch;
     }
 }
