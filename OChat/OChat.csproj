@@ -136,6 +136,7 @@
     <Compile Include="SendMessageUserControl.Designer.cs">
       <DependentUpon>SendMessageUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="SharedVariables.cs" />
     <Compile Include="SignUpForm.cs">
       <SubType>UserControl</SubType>
     </Compile>

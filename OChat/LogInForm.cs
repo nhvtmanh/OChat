@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -25,9 +27,12 @@ namespace OChat
             int nHeightEllipse // height of ellipse
         );
 
-        public LogInForm()
+        private Form parentForm;
+
+        public LogInForm(Form form)
         {
             InitializeComponent();
+            this.parentForm = form;
             DoubleBuffered = true;
             ResizeRedraw = true;
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
@@ -48,12 +53,6 @@ namespace OChat
             remove { btnSignUp.Click -= value; }
         }
 
-        public event EventHandler LogIn
-        {
-            add { btnLogIn.Click += value; }
-            remove { btnLogIn.Click -= value; }
-        }
-
         public event EventHandler ForgetPassword
         {
             add { btnForgetPass.Click += value; }
@@ -63,6 +62,62 @@ namespace OChat
         public void FocusTextboxEmail()
         {
             this.tbEmail.Focus();
+        }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            string email = tbEmail.Text;
+            string password = tbPassword.Text;
+            if (email == "" || password == "")
+            {
+                MessageBox.Show("Please fill in all fields", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!IsValidEmail(email))
+            {
+                MessageBox.Show("Invalid email", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!CheckCredentials(email, password))
+            {
+                MessageBox.Show("Wrong email or password", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            DisplayMainChatForm();
+        }
+
+        private void DisplayMainChatForm()
+        {
+            MainChatForm mainChatForm = new MainChatForm();
+            mainChatForm.Show();
+            HideMainStartForm();
+        }
+
+        private void HideMainStartForm()
+        {
+            this.parentForm.Hide();
+        }
+
+        public bool CheckCredentials(string email, string password)
+        {
+            string filePath = SharedVariables.fileDataUserPath;
+            string[] lines = File.ReadAllLines(filePath);
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split('|');
+                if (parts[4] == email && parts[2] == password)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool IsValidEmail(string email)
+        {
+            var pattern = @"^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$";
+            var regex = new Regex(pattern);
+            return regex.IsMatch(email);
         }
     }
 }

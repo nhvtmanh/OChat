@@ -76,7 +76,7 @@ namespace OChat
             string phone = tbPhone.Text;
             string email = tbEmail.Text;
             string password = tbPass.Text;
-            // write code check valid phone, email
+
             if (username == "" || phone == "" || email == "" || password == "")
             {
                 MessageBox.Show("Please fill in all fields", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -110,10 +110,7 @@ namespace OChat
 
         private void SaveUserDataToFile(string username, string phone, string email, string password, string avatarPath)
         {
-            // Define the file path where the data will be saved
-            //string currentDirectory = Directory.GetCurrentDirectory();
-
-            string filePath = "./Data/user.txt";
+            string filePath = SharedVariables.fileDataUserPath;
 
             // Read all lines from the file
             string[] lines = File.ReadAllLines(filePath);
