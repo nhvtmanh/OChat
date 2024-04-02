@@ -40,9 +40,10 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(591, 40);
+            this.pictureBox1.Location = new System.Drawing.Point(443, 32);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.Size = new System.Drawing.Size(45, 49);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -50,9 +51,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(657, 40);
+            this.label1.Location = new System.Drawing.Point(493, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 59);
+            this.label1.Size = new System.Drawing.Size(123, 47);
             this.label1.TabIndex = 1;
             this.label1.Text = "OChat";
             // 
@@ -64,10 +66,11 @@
             this.btnMinimize.IconColor = System.Drawing.Color.Black;
             this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnMinimize.IconSize = 30;
-            this.btnMinimize.Location = new System.Drawing.Point(1287, 6);
+            this.btnMinimize.Location = new System.Drawing.Point(965, 5);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.btnMinimize.Size = new System.Drawing.Size(50, 50);
+            this.btnMinimize.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.btnMinimize.Size = new System.Drawing.Size(38, 41);
             this.btnMinimize.TabIndex = 2;
             this.btnMinimize.UseVisualStyleBackColor = true;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
@@ -80,29 +83,30 @@
             this.btnClose.IconColor = System.Drawing.Color.Black;
             this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnClose.IconSize = 30;
-            this.btnClose.Location = new System.Drawing.Point(1343, 6);
+            this.btnClose.Location = new System.Drawing.Point(1007, 5);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.btnClose.Size = new System.Drawing.Size(50, 50);
+            this.btnClose.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.btnClose.Size = new System.Drawing.Size(38, 41);
             this.btnClose.TabIndex = 3;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // MainStartForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1400, 900);
+            this.ClientSize = new System.Drawing.Size(1050, 731);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainStartForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainStartForm";
-            this.Load += new System.EventHandler(this.LoadMainStartForm);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

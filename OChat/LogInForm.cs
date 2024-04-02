@@ -59,5 +59,10 @@ namespace OChat
             add { btnForgetPass.Click += value; }
             remove { btnForgetPass.Click -= value; }
         }
+
+        public void FocusTextboxEmail()
+        {
+            this.tbEmail.Focus();
+        }
     }
 }

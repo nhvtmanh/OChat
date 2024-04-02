@@ -31,13 +31,20 @@ namespace OChat
         public MainStartForm()
         {
             InitializeComponent();
+            LoadMainStartForm();
+            this.Shown += new EventHandler(MyForm_Shown);
             DoubleBuffered = true;
             ResizeRedraw = true;
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
             BackColor = ColorTranslator.FromHtml("#dbeafe");
         }
 
-        private void LoadMainStartForm(object sender, EventArgs e)
+        private void MyForm_Shown(object sender, EventArgs e)
+        {
+            logInForm.FocusTextboxEmail();
+        }
+
+        private void LoadMainStartForm()
         {
             logInForm = new LogInForm();
             logInForm.Location = new Point(ClientSize.Width / 2 - logInForm.Size.Width / 2, ClientSize.Height / 2 - logInForm.Size.Height / 2);
@@ -46,7 +53,7 @@ namespace OChat
             logInForm.ForgetPassword += btnForgetPass_Click;
 
             signUpForm = new SignUpForm();
-            signUpForm.Location = new Point(ClientSize.Width / 2 - signUpForm.Size.Width / 2, ClientSize.Height / 2 - signUpForm.Size.Height / 2 + 40);
+            signUpForm.Location = new Point(ClientSize.Width / 2 - signUpForm.Size.Width / 2, ClientSize.Height / 2 - signUpForm.Size.Height / 2 + 30);
             signUpForm.SignUp += SignUp;
             signUpForm.Visible = false;
 
