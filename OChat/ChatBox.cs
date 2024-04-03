@@ -18,6 +18,15 @@ namespace OChat
             ResizeRichTextBoxWidth(tbChat);
         }
 
+        public ChatBox(string currentTime, string senderAvatarPath, string message)
+        {
+            InitializeComponent();
+            lbTime.Text = currentTime;
+            myChatAvatar.BackgroundImage = Image.FromFile(senderAvatarPath);
+            tbChat.Text = message;
+            ResizeRichTextBoxWidth(tbChat);
+        }
+
         private void tbChat_ContentsResized(object sender, ContentsResizedEventArgs e)
         {
             ((RichTextBox)sender).Height = e.NewRectangle.Height + 5;

@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using Image = System.Drawing.Image;
 using RichTextBox = System.Windows.Forms.RichTextBox;
 
@@ -30,13 +32,16 @@ namespace OChat
             int nHeightEllipse // height of ellipse
         );
 
+        public static SendMessageUserControl sendMessageUserControl;
+        public static FlowLayoutPanel flowLayoutPanel;
+
         public MainChatForm()
         {
             InitializeComponent();
             DoubleBuffered = true;
             ResizeRedraw = true;
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
-            LoadMainChatForm();
+            LoadMainChatForm(); 
         }
 
         private void LoadMainChatForm()
@@ -45,14 +50,36 @@ namespace OChat
             Username.Text = SharedVariables.userName;
             statusImage.BackgroundImage = Image.FromFile(SharedVariables.onlineImagePath);
             Status.Text = "Online";
+            lbHello.Text = "Hello, " + SharedVariables.userName;
 
             LoadUserFriends();
 
-            SendMessageUserControl sendMessageUserControl = new SendMessageUserControl();
+            sendMessageUserControl = new SendMessageUserControl();
             sendMessageUserControl.Dock = DockStyle.Fill;
             sendMessageUserControl.BtnEmojiClick += btnEmoji_Click;
+            sendMessageUserControl.BtnSendClick += btnSend_Click;
             splitContainer.Visible = true;
             splitContainer.Panel2.Controls.Add(sendMessageUserControl);
+
+            flowLayoutPanel = new FlowLayoutPanel();
+            flowLayoutPanel.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel.Dock = DockStyle.Fill;
+            flowLayoutPanel.AutoScroll = true;
+            flowLayoutPanel.WrapContents = false;
+            splitContainer.Panel1.Controls.Add(flowLayoutPanel);
+        }
+
+        private void TestDisplayAlbumPanel()
+        {
+            lbHello.Visible = false;
+            btnMinimize_rightPanel.Visible = false;
+            btnCLose_rightPanel.Visible = false;
+            topPanel.Visible = false;
+            MainPanel.Visible = true;
+            albumPanel.Visible = true;
+            //MessageBox.Show(topPanel.Size.ToString());
+            //MessageBox.Show(MainPanel.Size.ToString());
+            //MessageBox.Show(albumPanel.Size.ToString());
         }
 
         ChatUserControl lastClickedControl = null;
@@ -125,9 +152,75 @@ namespace OChat
 
                     // Store the clicked UserControl
                     lastClickedControl = clickedControl;
+
+                    // Display the clicked UserControl in the top panel
+                    // position of UserControl in the friendPanel is 0, 21
+
+                    RemoveUserInTopPanel();
+                    ChatUserControl newChatUserControl = new ChatUserControl(clickedControl.UserId, clickedControl.AvatarPath, clickedControl.UserName, clickedControl.StatusImagePath, clickedControl.Status);
+                    newChatUserControl.Location = new Point(0, 21);
+                    topPanel.Controls.Add(newChatUserControl);
+
+                    lbHello.Visible = false;
+                    btnMinimize_rightPanel.Visible = false;
+                    btnCLose_rightPanel.Visible = false;
+
+                    topPanel.Visible = true;
+                    MainPanel.Visible = true;
+                    MainPanel.BringToFront();
+
+                    //Load the chat history
+                    flowLayoutPanel.Controls.Clear();
+                    int receiverID = clickedControl.UserId;
+                    LoadChatHistory(receiverID);
+                    flowLayoutPanel.VerticalScroll.Value = flowLayoutPanel.VerticalScroll.Maximum;
+
+                    //this.Shown += new EventHandler(MyForm_Shown);
                 };
 
                 friendPanel.Controls.Add(chatUserControl);
+            }
+        }
+
+        private void LoadChatHistory(int receiverID)
+        {
+            int senderID = SharedVariables.userID;
+            string filePath = SharedVariables.fileDataMessagePath;
+            string[] lines = File.ReadAllLines(filePath);
+            foreach (string line in lines)
+            {
+                string[] data = line.Split('|');
+
+                if (senderID == int.Parse(data[0]) && receiverID == int.Parse(data[1]))
+                {
+                    if (data[2] == "text")
+                    {
+                        string currentTime = data[4];
+                        string senderAvatarPath = SharedVariables.userAvatarPath;
+                        string message = data[3];
+
+                        ChatBox chat = new ChatBox(currentTime, senderAvatarPath, message);
+                        chat.Dock = DockStyle.Fill;
+                        flowLayoutPanel.Controls.Add(chat);
+                    }
+                }
+            }
+        }
+
+        //private void MyForm_Shown(object sender, EventArgs e)
+        //{
+        //    sendMessageUserControl.FocusTextboxChat();
+        //}
+
+        private void RemoveUserInTopPanel()
+        {
+            foreach (var control in topPanel.Controls)
+            {
+                if (control is ChatUserControl)
+                {
+                    topPanel.Controls.Remove((ChatUserControl)control);
+                    return;
+                }
             }
         }
 
@@ -155,6 +248,42 @@ namespace OChat
             //}
         }
 
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            int senderID = SharedVariables.userID;
+            int receiverID = lastClickedControl.UserId;
+            string message = sendMessageUserControl.TextMessage;
+
+            if (message == "")
+            {
+                return;
+            }
+
+            string type = "text";
+            string currentTime = DateTime.Now.ToString("dd/MM/yyyy, hh:mm tt");
+
+            //Display the message
+            string senderAvatarPath = SharedVariables.userAvatarPath;
+            ChatBox chat = new ChatBox(currentTime, senderAvatarPath, message);
+            chat.Dock = DockStyle.Fill;
+            flowLayoutPanel.Controls.Add(chat);
+
+            //Clear the message box
+            sendMessageUserControl.ClearTextboxChat();
+            sendMessageUserControl.FocusTextboxChat();
+
+            flowLayoutPanel.VerticalScroll.Value = flowLayoutPanel.VerticalScroll.Maximum;
+
+            //Save the message to file
+            string filePath = SharedVariables.fileDataMessagePath;
+            string data = $"{senderID}|{receiverID}|{type}|{message}|{currentTime}";
+
+            using (StreamWriter sw = new StreamWriter(filePath, true))
+            {
+                sw.WriteLine(data);
+            }
+        }
+
         private void btnAlbum_Click(object sender, EventArgs e)
         {
             splitContainer.Visible = !splitContainer.Visible;
@@ -179,6 +308,26 @@ namespace OChat
             MainStartForm mainStartForm = new MainStartForm();
             mainStartForm.ShowDialog();
             this.Close();
+        }
+
+        private void btnMinimize_rightPanel_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnCLose_rightPanel_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void btnMinimize_SettingPanel_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnClose_SettingPanel_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

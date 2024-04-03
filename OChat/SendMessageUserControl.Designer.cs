@@ -34,7 +34,7 @@ namespace OChat
             this.btnEmoji = new FontAwesome.Sharp.IconButton();
             this.btnUploadVideo = new FontAwesome.Sharp.IconButton();
             this.btnSend = new FontAwesome.Sharp.IconButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbChat = new System.Windows.Forms.TextBox();
             this.btnUploadImage = new FontAwesome.Sharp.IconButton();
             this.panelEmoji = new System.Windows.Forms.Panel();
             this.pemo5 = new System.Windows.Forms.PictureBox();
@@ -95,14 +95,14 @@ namespace OChat
             this.btnSend.TabIndex = 8;
             this.btnSend.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tbChat
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(160, 14);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(805, 43);
-            this.textBox1.TabIndex = 7;
+            this.tbChat.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbChat.Location = new System.Drawing.Point(160, 14);
+            this.tbChat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbChat.Name = "tbChat";
+            this.tbChat.Size = new System.Drawing.Size(805, 43);
+            this.tbChat.TabIndex = 7;
             // 
             // btnUploadImage
             // 
@@ -190,7 +190,7 @@ namespace OChat
             this.Controls.Add(this.btnEmoji);
             this.Controls.Add(this.btnUploadVideo);
             this.Controls.Add(this.btnSend);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbChat);
             this.Controls.Add(this.btnUploadImage);
             this.Name = "SendMessageUserControl";
             this.Size = new System.Drawing.Size(1060, 74);
@@ -210,7 +210,7 @@ namespace OChat
         private FontAwesome.Sharp.IconButton btnEmoji;
         private FontAwesome.Sharp.IconButton btnUploadVideo;
         private FontAwesome.Sharp.IconButton btnSend;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbChat;
         private FontAwesome.Sharp.IconButton btnUploadImage;
         private System.Windows.Forms.Panel panelEmoji;
         private System.Windows.Forms.PictureBox pemo1;

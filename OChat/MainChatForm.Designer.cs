@@ -47,27 +47,18 @@ namespace OChat
             this.btnAlbum = new FontAwesome.Sharp.IconButton();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.chatUserControl4 = new OChat.ChatUserControl();
             this.btnClose = new FontAwesome.Sharp.IconButton();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.albumPanel = new System.Windows.Forms.Panel();
             this.flVideoPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.videoItem1 = new OChat.VideoItem();
-            this.videoItem2 = new OChat.VideoItem();
             this.flImagePanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.imageItem1 = new OChat.ImageItem();
-            this.imageItem2 = new OChat.ImageItem();
-            this.imageItem3 = new OChat.ImageItem();
-            this.imageItem4 = new OChat.ImageItem();
-            this.imageItem5 = new OChat.ImageItem();
-            this.imageItem6 = new OChat.ImageItem();
-            this.imageItem7 = new OChat.ImageItem();
-            this.imageItem8 = new OChat.ImageItem();
-            this.imageItem9 = new OChat.ImageItem();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.rightPanel = new System.Windows.Forms.Panel();
+            this.lbHello = new System.Windows.Forms.Label();
+            this.btnCLose_rightPanel = new FontAwesome.Sharp.IconButton();
+            this.btnMinimize_rightPanel = new FontAwesome.Sharp.IconButton();
             this.MainSettingPanel = new System.Windows.Forms.Panel();
             this.rbVN = new System.Windows.Forms.RadioButton();
             this.rbEnglish = new System.Windows.Forms.RadioButton();
@@ -75,8 +66,8 @@ namespace OChat
             this.rbDark = new System.Windows.Forms.RadioButton();
             this.rbLight = new System.Windows.Forms.RadioButton();
             this.lbUIMode = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btnClose_SettingPanel = new FontAwesome.Sharp.IconButton();
+            this.btnMinimize_SettingPanel = new FontAwesome.Sharp.IconButton();
             this.lbSetting = new System.Windows.Forms.Label();
             this.settingIcon = new FontAwesome.Sharp.IconPictureBox();
             this.videoBox1 = new OChat.VideoBox();
@@ -94,8 +85,6 @@ namespace OChat
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.MainPanel.SuspendLayout();
             this.albumPanel.SuspendLayout();
-            this.flVideoPanel.SuspendLayout();
-            this.flImagePanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.MainSettingPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.settingIcon)).BeginInit();
@@ -249,7 +238,6 @@ namespace OChat
             this.topPanel.Controls.Add(this.btnAlbum);
             this.topPanel.Controls.Add(this.tbSearch);
             this.topPanel.Controls.Add(this.iconPictureBox1);
-            this.topPanel.Controls.Add(this.chatUserControl4);
             this.topPanel.Controls.Add(this.btnClose);
             this.topPanel.Controls.Add(this.btnMinimize);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -258,6 +246,7 @@ namespace OChat
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(1060, 140);
             this.topPanel.TabIndex = 1;
+            this.topPanel.Visible = false;
             // 
             // btnAlbum
             // 
@@ -299,20 +288,6 @@ namespace OChat
             this.iconPictureBox1.TabIndex = 6;
             this.iconPictureBox1.TabStop = false;
             // 
-            // chatUserControl4
-            // 
-            this.chatUserControl4.AvatarPath = null;
-            this.chatUserControl4.BackColor = System.Drawing.Color.White;
-            this.chatUserControl4.Location = new System.Drawing.Point(0, 21);
-            this.chatUserControl4.Margin = new System.Windows.Forms.Padding(2);
-            this.chatUserControl4.Name = "chatUserControl4";
-            this.chatUserControl4.Size = new System.Drawing.Size(340, 98);
-            this.chatUserControl4.Status = null;
-            this.chatUserControl4.StatusImagePath = null;
-            this.chatUserControl4.TabIndex = 8;
-            this.chatUserControl4.UserId = 0;
-            this.chatUserControl4.UserName = null;
-            // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
@@ -349,13 +324,14 @@ namespace OChat
             // 
             // MainPanel
             // 
-            this.MainPanel.Controls.Add(this.splitContainer);
             this.MainPanel.Controls.Add(this.albumPanel);
+            this.MainPanel.Controls.Add(this.splitContainer);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(0, 140);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1060, 760);
             this.MainPanel.TabIndex = 2;
+            this.MainPanel.Visible = false;
             // 
             // albumPanel
             // 
@@ -373,106 +349,18 @@ namespace OChat
             // flVideoPanel
             // 
             this.flVideoPanel.AutoScroll = true;
-            this.flVideoPanel.Controls.Add(this.videoItem1);
-            this.flVideoPanel.Controls.Add(this.videoItem2);
             this.flVideoPanel.Location = new System.Drawing.Point(60, 297);
             this.flVideoPanel.Name = "flVideoPanel";
             this.flVideoPanel.Size = new System.Drawing.Size(930, 440);
             this.flVideoPanel.TabIndex = 3;
             // 
-            // videoItem1
-            // 
-            this.videoItem1.Location = new System.Drawing.Point(3, 3);
-            this.videoItem1.Name = "videoItem1";
-            this.videoItem1.Size = new System.Drawing.Size(900, 440);
-            this.videoItem1.TabIndex = 0;
-            // 
-            // videoItem2
-            // 
-            this.videoItem2.Location = new System.Drawing.Point(3, 449);
-            this.videoItem2.Name = "videoItem2";
-            this.videoItem2.Size = new System.Drawing.Size(900, 440);
-            this.videoItem2.TabIndex = 1;
-            // 
             // flImagePanel
             // 
             this.flImagePanel.AutoScroll = true;
-            this.flImagePanel.Controls.Add(this.imageItem1);
-            this.flImagePanel.Controls.Add(this.imageItem2);
-            this.flImagePanel.Controls.Add(this.imageItem3);
-            this.flImagePanel.Controls.Add(this.imageItem4);
-            this.flImagePanel.Controls.Add(this.imageItem5);
-            this.flImagePanel.Controls.Add(this.imageItem6);
-            this.flImagePanel.Controls.Add(this.imageItem7);
-            this.flImagePanel.Controls.Add(this.imageItem8);
-            this.flImagePanel.Controls.Add(this.imageItem9);
             this.flImagePanel.Location = new System.Drawing.Point(60, 60);
             this.flImagePanel.Name = "flImagePanel";
             this.flImagePanel.Size = new System.Drawing.Size(930, 185);
             this.flImagePanel.TabIndex = 2;
-            // 
-            // imageItem1
-            // 
-            this.imageItem1.Location = new System.Drawing.Point(3, 3);
-            this.imageItem1.Name = "imageItem1";
-            this.imageItem1.Size = new System.Drawing.Size(176, 176);
-            this.imageItem1.TabIndex = 0;
-            // 
-            // imageItem2
-            // 
-            this.imageItem2.Location = new System.Drawing.Point(185, 3);
-            this.imageItem2.Name = "imageItem2";
-            this.imageItem2.Size = new System.Drawing.Size(176, 176);
-            this.imageItem2.TabIndex = 1;
-            // 
-            // imageItem3
-            // 
-            this.imageItem3.Location = new System.Drawing.Point(367, 3);
-            this.imageItem3.Name = "imageItem3";
-            this.imageItem3.Size = new System.Drawing.Size(176, 176);
-            this.imageItem3.TabIndex = 2;
-            // 
-            // imageItem4
-            // 
-            this.imageItem4.Location = new System.Drawing.Point(549, 3);
-            this.imageItem4.Name = "imageItem4";
-            this.imageItem4.Size = new System.Drawing.Size(176, 176);
-            this.imageItem4.TabIndex = 3;
-            // 
-            // imageItem5
-            // 
-            this.imageItem5.Location = new System.Drawing.Point(731, 3);
-            this.imageItem5.Name = "imageItem5";
-            this.imageItem5.Size = new System.Drawing.Size(176, 176);
-            this.imageItem5.TabIndex = 4;
-            // 
-            // imageItem6
-            // 
-            this.imageItem6.Location = new System.Drawing.Point(3, 185);
-            this.imageItem6.Name = "imageItem6";
-            this.imageItem6.Size = new System.Drawing.Size(176, 176);
-            this.imageItem6.TabIndex = 5;
-            // 
-            // imageItem7
-            // 
-            this.imageItem7.Location = new System.Drawing.Point(185, 185);
-            this.imageItem7.Name = "imageItem7";
-            this.imageItem7.Size = new System.Drawing.Size(176, 176);
-            this.imageItem7.TabIndex = 6;
-            // 
-            // imageItem8
-            // 
-            this.imageItem8.Location = new System.Drawing.Point(367, 185);
-            this.imageItem8.Name = "imageItem8";
-            this.imageItem8.Size = new System.Drawing.Size(176, 176);
-            this.imageItem8.TabIndex = 7;
-            // 
-            // imageItem9
-            // 
-            this.imageItem9.Location = new System.Drawing.Point(549, 185);
-            this.imageItem9.Name = "imageItem9";
-            this.imageItem9.Size = new System.Drawing.Size(176, 176);
-            this.imageItem9.TabIndex = 8;
             // 
             // label2
             // 
@@ -498,12 +386,59 @@ namespace OChat
             // 
             this.rightPanel.Controls.Add(this.MainPanel);
             this.rightPanel.Controls.Add(this.topPanel);
+            this.rightPanel.Controls.Add(this.lbHello);
+            this.rightPanel.Controls.Add(this.btnCLose_rightPanel);
+            this.rightPanel.Controls.Add(this.btnMinimize_rightPanel);
             this.rightPanel.Controls.Add(this.MainSettingPanel);
             this.rightPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rightPanel.Location = new System.Drawing.Point(340, 0);
             this.rightPanel.Name = "rightPanel";
             this.rightPanel.Size = new System.Drawing.Size(1060, 900);
             this.rightPanel.TabIndex = 0;
+            // 
+            // lbHello
+            // 
+            this.lbHello.AutoSize = true;
+            this.lbHello.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHello.Location = new System.Drawing.Point(70, 35);
+            this.lbHello.Name = "lbHello";
+            this.lbHello.Size = new System.Drawing.Size(159, 54);
+            this.lbHello.TabIndex = 10;
+            this.lbHello.Text = "Setting";
+            // 
+            // btnCLose_rightPanel
+            // 
+            this.btnCLose_rightPanel.FlatAppearance.BorderSize = 0;
+            this.btnCLose_rightPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCLose_rightPanel.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            this.btnCLose_rightPanel.IconColor = System.Drawing.Color.Black;
+            this.btnCLose_rightPanel.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnCLose_rightPanel.IconSize = 30;
+            this.btnCLose_rightPanel.Location = new System.Drawing.Point(1005, 2);
+            this.btnCLose_rightPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCLose_rightPanel.Name = "btnCLose_rightPanel";
+            this.btnCLose_rightPanel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnCLose_rightPanel.Size = new System.Drawing.Size(51, 50);
+            this.btnCLose_rightPanel.TabIndex = 9;
+            this.btnCLose_rightPanel.UseVisualStyleBackColor = true;
+            this.btnCLose_rightPanel.Click += new System.EventHandler(this.btnCLose_rightPanel_Click);
+            // 
+            // btnMinimize_rightPanel
+            // 
+            this.btnMinimize_rightPanel.FlatAppearance.BorderSize = 0;
+            this.btnMinimize_rightPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize_rightPanel.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimize_rightPanel.IconColor = System.Drawing.Color.Black;
+            this.btnMinimize_rightPanel.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnMinimize_rightPanel.IconSize = 30;
+            this.btnMinimize_rightPanel.Location = new System.Drawing.Point(949, 2);
+            this.btnMinimize_rightPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMinimize_rightPanel.Name = "btnMinimize_rightPanel";
+            this.btnMinimize_rightPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.btnMinimize_rightPanel.Size = new System.Drawing.Size(51, 50);
+            this.btnMinimize_rightPanel.TabIndex = 8;
+            this.btnMinimize_rightPanel.UseVisualStyleBackColor = true;
+            this.btnMinimize_rightPanel.Click += new System.EventHandler(this.btnMinimize_rightPanel_Click);
             // 
             // MainSettingPanel
             // 
@@ -514,8 +449,8 @@ namespace OChat
             this.MainSettingPanel.Controls.Add(this.rbDark);
             this.MainSettingPanel.Controls.Add(this.rbLight);
             this.MainSettingPanel.Controls.Add(this.lbUIMode);
-            this.MainSettingPanel.Controls.Add(this.iconButton1);
-            this.MainSettingPanel.Controls.Add(this.iconButton2);
+            this.MainSettingPanel.Controls.Add(this.btnClose_SettingPanel);
+            this.MainSettingPanel.Controls.Add(this.btnMinimize_SettingPanel);
             this.MainSettingPanel.Controls.Add(this.lbSetting);
             this.MainSettingPanel.Controls.Add(this.settingIcon);
             this.MainSettingPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -593,37 +528,39 @@ namespace OChat
             this.lbUIMode.TabIndex = 8;
             this.lbUIMode.Text = "UI Mode";
             // 
-            // iconButton1
+            // btnClose_SettingPanel
             // 
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(1005, 2);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.iconButton1.Size = new System.Drawing.Size(51, 50);
-            this.iconButton1.TabIndex = 7;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.btnClose_SettingPanel.FlatAppearance.BorderSize = 0;
+            this.btnClose_SettingPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose_SettingPanel.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            this.btnClose_SettingPanel.IconColor = System.Drawing.Color.Black;
+            this.btnClose_SettingPanel.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnClose_SettingPanel.IconSize = 30;
+            this.btnClose_SettingPanel.Location = new System.Drawing.Point(1005, 2);
+            this.btnClose_SettingPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClose_SettingPanel.Name = "btnClose_SettingPanel";
+            this.btnClose_SettingPanel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.btnClose_SettingPanel.Size = new System.Drawing.Size(51, 50);
+            this.btnClose_SettingPanel.TabIndex = 7;
+            this.btnClose_SettingPanel.UseVisualStyleBackColor = true;
+            this.btnClose_SettingPanel.Click += new System.EventHandler(this.btnClose_SettingPanel_Click);
             // 
-            // iconButton2
+            // btnMinimize_SettingPanel
             // 
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton2.IconSize = 30;
-            this.iconButton2.Location = new System.Drawing.Point(949, 2);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.iconButton2.Size = new System.Drawing.Size(51, 50);
-            this.iconButton2.TabIndex = 6;
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.btnMinimize_SettingPanel.FlatAppearance.BorderSize = 0;
+            this.btnMinimize_SettingPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize_SettingPanel.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimize_SettingPanel.IconColor = System.Drawing.Color.Black;
+            this.btnMinimize_SettingPanel.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnMinimize_SettingPanel.IconSize = 30;
+            this.btnMinimize_SettingPanel.Location = new System.Drawing.Point(949, 2);
+            this.btnMinimize_SettingPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMinimize_SettingPanel.Name = "btnMinimize_SettingPanel";
+            this.btnMinimize_SettingPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.btnMinimize_SettingPanel.Size = new System.Drawing.Size(51, 50);
+            this.btnMinimize_SettingPanel.TabIndex = 6;
+            this.btnMinimize_SettingPanel.UseVisualStyleBackColor = true;
+            this.btnMinimize_SettingPanel.Click += new System.EventHandler(this.btnMinimize_SettingPanel_Click);
             // 
             // lbSetting
             // 
@@ -710,9 +647,8 @@ namespace OChat
             this.MainPanel.ResumeLayout(false);
             this.albumPanel.ResumeLayout(false);
             this.albumPanel.PerformLayout();
-            this.flVideoPanel.ResumeLayout(false);
-            this.flImagePanel.ResumeLayout(false);
             this.rightPanel.ResumeLayout(false);
+            this.rightPanel.PerformLayout();
             this.MainSettingPanel.ResumeLayout(false);
             this.MainSettingPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.settingIcon)).EndInit();
@@ -732,7 +668,6 @@ namespace OChat
         private FontAwesome.Sharp.IconButton btnClose;
         private FontAwesome.Sharp.IconButton btnMinimize;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private ChatUserControl chatUserControl4;
         private System.Windows.Forms.SplitContainer splitContainer;
         private TextBox tbSearch;
         private ChatBox chatBox3;
@@ -745,18 +680,7 @@ namespace OChat
         private Label label2;
         private Label label1;
         private FlowLayoutPanel flImagePanel;
-        private ImageItem imageItem1;
-        private ImageItem imageItem2;
-        private ImageItem imageItem3;
-        private ImageItem imageItem4;
-        private ImageItem imageItem5;
-        private ImageItem imageItem6;
-        private ImageItem imageItem7;
-        private ImageItem imageItem8;
-        private ImageItem imageItem9;
         private FlowLayoutPanel flVideoPanel;
-        private VideoItem videoItem1;
-        private VideoItem videoItem2;
         private Panel friendPanel;
         private Panel settingPanel;
         private FontAwesome.Sharp.IconButton btnSetting;
@@ -765,13 +689,16 @@ namespace OChat
         private Panel MainSettingPanel;
         private FontAwesome.Sharp.IconPictureBox settingIcon;
         private Label lbSetting;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btnClose_SettingPanel;
+        private FontAwesome.Sharp.IconButton btnMinimize_SettingPanel;
         private RadioButton rbLight;
         private Label lbUIMode;
         private RadioButton rbDark;
         private RadioButton rbVN;
         private RadioButton rbEnglish;
         private Label rbLang;
+        private Label lbHello;
+        private FontAwesome.Sharp.IconButton btnCLose_rightPanel;
+        private FontAwesome.Sharp.IconButton btnMinimize_rightPanel;
     }
 }
