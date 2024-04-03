@@ -48,6 +48,12 @@ namespace OChat
             remove { btnUploadImage.Click -= value; }
         }
 
+        public event EventHandler BtnUploadVideoClick
+        {
+            add { btnUploadVideo.Click += value; }
+            remove { btnUploadVideo.Click -= value; }
+        }
+
         public void FocusTextboxChat()
         {
             tbChat.Focus();

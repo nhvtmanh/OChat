@@ -13,13 +13,22 @@ namespace OChat
 {
     public partial class VideoBox : UserControl
     {
-        string path = "D:\\Music\\CHẠY NGAY ĐI - SƠN TÙNG M-TP (ONIONN REMIX).mp4";
         public VideoBox()
         {
             InitializeComponent();
             myVideo.uiMode = "mini";
-            myVideo.URL = path;
             myVideo.Ctlcontrols.stop();
+        }
+
+        public VideoBox(string currentTime, string senderAvatarPath, string file)
+        {
+            InitializeComponent();
+            myVideo.uiMode = "mini";
+            myVideo.Ctlcontrols.stop();
+
+            lbTime.Text = currentTime;
+            myChatAvatar.BackgroundImage = Image.FromFile(senderAvatarPath);
+            myVideo.URL = file;
         }
     }
 }

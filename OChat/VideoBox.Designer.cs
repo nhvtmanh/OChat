@@ -66,7 +66,7 @@
             this.myVideo.Location = new System.Drawing.Point(128, 30);
             this.myVideo.Name = "myVideo";
             this.myVideo.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("myVideo.OcxState")));
-            this.myVideo.Size = new System.Drawing.Size(880, 400);
+            this.myVideo.Size = new System.Drawing.Size(500, 400);
             this.myVideo.TabIndex = 16;
             // 
             // VideoBox

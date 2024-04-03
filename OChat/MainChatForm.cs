@@ -56,10 +56,11 @@ namespace OChat
 
             sendMessageUserControl = new SendMessageUserControl();
             sendMessageUserControl.Dock = DockStyle.Fill;
-            //sendMessageUserControl.BtnEmojiClick += btnEmoji_Click;
+
             sendMessageUserControl.BtnSendClick += btnSend_Click;
             sendMessageUserControl.BtnUploadImageClick += btnUploadImage_Click;
-            //sendMessageUserControl.BtnEmojiPictureboxClick += btnEmoji_Click;
+            sendMessageUserControl.BtnUploadVideoClick += btnUploadVideo_Click;
+
             splitContainer.Visible = true;
             splitContainer.Panel2.Controls.Add(sendMessageUserControl);
 
@@ -69,6 +70,40 @@ namespace OChat
             flowLayoutPanel.AutoScroll = true;
             flowLayoutPanel.WrapContents = false;
             splitContainer.Panel1.Controls.Add(flowLayoutPanel);
+        }
+
+        private void btnUploadVideo_Click(object sender, EventArgs e)
+        {
+            int senderID = SharedVariables.userID;
+            string senderAvatarPath = SharedVariables.userAvatarPath;
+            int receiverID = lastClickedControl.UserId;
+            string type = "video";
+            string filePath = SharedVariables.fileDataMessagePath;
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "MP4 Files|*.mp4";
+            openFileDialog.Multiselect = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                foreach (string file in openFileDialog.FileNames)
+                {
+                    //Display all selected videos
+                    string currentTime = DateTime.Now.ToString("dd/MM/yyyy, hh:mm tt");
+                    VideoBox videoBox = new VideoBox(currentTime, senderAvatarPath, file);
+                    videoBox.Dock = DockStyle.Fill;
+                    flowLayoutPanel.Controls.Add(videoBox);
+                    flowLayoutPanel.VerticalScroll.Value = flowLayoutPanel.VerticalScroll.Maximum;
+
+                    //Save the selected images to file
+                    string data = $"{senderID}|{receiverID}|{type}|{file}|{currentTime}";
+
+                    using (StreamWriter sw = new StreamWriter(filePath, true))
+                    {
+                        sw.WriteLine(data);
+                    }
+                }
+            }
         }
 
         private void TestDisplayAlbumPanel()
@@ -223,6 +258,15 @@ namespace OChat
                         EmojiBox emojiBox = new EmojiBox(currentTime, senderAvatarPath, emojiPath);
                         emojiBox.Dock = DockStyle.Fill;
                         flowLayoutPanel.Controls.Add(emojiBox);
+                    }
+                    else
+                    {
+                        string currentTime = data[4];
+                        string videoPath = data[3];
+
+                        VideoBox videoBox = new VideoBox(currentTime, senderAvatarPath, videoPath);
+                        videoBox.Dock = DockStyle.Fill;
+                        flowLayoutPanel.Controls.Add(videoBox);
                     }
                 }
             }
