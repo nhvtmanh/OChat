@@ -47,12 +47,24 @@ namespace OChat
             this.btnAlbum = new FontAwesome.Sharp.IconButton();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.chatUserControl4 = new OChat.ChatUserControl();
             this.btnClose = new FontAwesome.Sharp.IconButton();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.albumPanel = new System.Windows.Forms.Panel();
             this.flVideoPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.videoItem1 = new OChat.VideoItem();
+            this.videoItem2 = new OChat.VideoItem();
             this.flImagePanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.imageItem1 = new OChat.ImageItem();
+            this.imageItem2 = new OChat.ImageItem();
+            this.imageItem3 = new OChat.ImageItem();
+            this.imageItem4 = new OChat.ImageItem();
+            this.imageItem5 = new OChat.ImageItem();
+            this.imageItem6 = new OChat.ImageItem();
+            this.imageItem7 = new OChat.ImageItem();
+            this.imageItem8 = new OChat.ImageItem();
+            this.imageItem9 = new OChat.ImageItem();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.rightPanel = new System.Windows.Forms.Panel();
@@ -67,32 +79,11 @@ namespace OChat
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.lbSetting = new System.Windows.Forms.Label();
             this.settingIcon = new FontAwesome.Sharp.IconPictureBox();
-            this.videoItem1 = new OChat.VideoItem();
-            this.videoItem2 = new OChat.VideoItem();
-            this.imageItem1 = new OChat.ImageItem();
-            this.imageItem2 = new OChat.ImageItem();
-            this.imageItem3 = new OChat.ImageItem();
-            this.imageItem4 = new OChat.ImageItem();
-            this.imageItem5 = new OChat.ImageItem();
-            this.imageItem6 = new OChat.ImageItem();
-            this.imageItem7 = new OChat.ImageItem();
-            this.imageItem8 = new OChat.ImageItem();
-            this.imageItem9 = new OChat.ImageItem();
-            this.chatUserControl4 = new OChat.ChatUserControl();
-            this.chatUserControl9 = new OChat.ChatUserControl();
-            this.chatUserControl8 = new OChat.ChatUserControl();
-            this.chatUserControl7 = new OChat.ChatUserControl();
-            this.chatUserControl6 = new OChat.ChatUserControl();
-            this.chatUserControl5 = new OChat.ChatUserControl();
-            this.chatUserControl3 = new OChat.ChatUserControl();
-            this.chatUserControl2 = new OChat.ChatUserControl();
-            this.chatUserControl1 = new OChat.ChatUserControl();
             this.videoBox1 = new OChat.VideoBox();
             this.chatBox3 = new OChat.ChatBox();
             this.chatBox2 = new OChat.ChatBox();
             this.chatBox1 = new OChat.ChatBox();
             this.leftPanel.SuspendLayout();
-            this.friendPanel.SuspendLayout();
             this.settingPanel.SuspendLayout();
             this.userPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.statusImage)).BeginInit();
@@ -126,15 +117,7 @@ namespace OChat
             // friendPanel
             // 
             this.friendPanel.AutoScroll = true;
-            this.friendPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.friendPanel.Controls.Add(this.chatUserControl9);
-            this.friendPanel.Controls.Add(this.chatUserControl8);
-            this.friendPanel.Controls.Add(this.chatUserControl7);
-            this.friendPanel.Controls.Add(this.chatUserControl6);
-            this.friendPanel.Controls.Add(this.chatUserControl5);
-            this.friendPanel.Controls.Add(this.chatUserControl3);
-            this.friendPanel.Controls.Add(this.chatUserControl2);
-            this.friendPanel.Controls.Add(this.chatUserControl1);
+            this.friendPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.friendPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.friendPanel.Location = new System.Drawing.Point(0, 140);
             this.friendPanel.Name = "friendPanel";
@@ -316,6 +299,20 @@ namespace OChat
             this.iconPictureBox1.TabIndex = 6;
             this.iconPictureBox1.TabStop = false;
             // 
+            // chatUserControl4
+            // 
+            this.chatUserControl4.AvatarPath = null;
+            this.chatUserControl4.BackColor = System.Drawing.Color.White;
+            this.chatUserControl4.Location = new System.Drawing.Point(0, 21);
+            this.chatUserControl4.Margin = new System.Windows.Forms.Padding(2);
+            this.chatUserControl4.Name = "chatUserControl4";
+            this.chatUserControl4.Size = new System.Drawing.Size(340, 98);
+            this.chatUserControl4.Status = null;
+            this.chatUserControl4.StatusImagePath = null;
+            this.chatUserControl4.TabIndex = 8;
+            this.chatUserControl4.UserId = 0;
+            this.chatUserControl4.UserName = null;
+            // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
@@ -383,6 +380,20 @@ namespace OChat
             this.flVideoPanel.Size = new System.Drawing.Size(930, 440);
             this.flVideoPanel.TabIndex = 3;
             // 
+            // videoItem1
+            // 
+            this.videoItem1.Location = new System.Drawing.Point(3, 3);
+            this.videoItem1.Name = "videoItem1";
+            this.videoItem1.Size = new System.Drawing.Size(900, 440);
+            this.videoItem1.TabIndex = 0;
+            // 
+            // videoItem2
+            // 
+            this.videoItem2.Location = new System.Drawing.Point(3, 449);
+            this.videoItem2.Name = "videoItem2";
+            this.videoItem2.Size = new System.Drawing.Size(900, 440);
+            this.videoItem2.TabIndex = 1;
+            // 
             // flImagePanel
             // 
             this.flImagePanel.AutoScroll = true;
@@ -399,6 +410,69 @@ namespace OChat
             this.flImagePanel.Name = "flImagePanel";
             this.flImagePanel.Size = new System.Drawing.Size(930, 185);
             this.flImagePanel.TabIndex = 2;
+            // 
+            // imageItem1
+            // 
+            this.imageItem1.Location = new System.Drawing.Point(3, 3);
+            this.imageItem1.Name = "imageItem1";
+            this.imageItem1.Size = new System.Drawing.Size(176, 176);
+            this.imageItem1.TabIndex = 0;
+            // 
+            // imageItem2
+            // 
+            this.imageItem2.Location = new System.Drawing.Point(185, 3);
+            this.imageItem2.Name = "imageItem2";
+            this.imageItem2.Size = new System.Drawing.Size(176, 176);
+            this.imageItem2.TabIndex = 1;
+            // 
+            // imageItem3
+            // 
+            this.imageItem3.Location = new System.Drawing.Point(367, 3);
+            this.imageItem3.Name = "imageItem3";
+            this.imageItem3.Size = new System.Drawing.Size(176, 176);
+            this.imageItem3.TabIndex = 2;
+            // 
+            // imageItem4
+            // 
+            this.imageItem4.Location = new System.Drawing.Point(549, 3);
+            this.imageItem4.Name = "imageItem4";
+            this.imageItem4.Size = new System.Drawing.Size(176, 176);
+            this.imageItem4.TabIndex = 3;
+            // 
+            // imageItem5
+            // 
+            this.imageItem5.Location = new System.Drawing.Point(731, 3);
+            this.imageItem5.Name = "imageItem5";
+            this.imageItem5.Size = new System.Drawing.Size(176, 176);
+            this.imageItem5.TabIndex = 4;
+            // 
+            // imageItem6
+            // 
+            this.imageItem6.Location = new System.Drawing.Point(3, 185);
+            this.imageItem6.Name = "imageItem6";
+            this.imageItem6.Size = new System.Drawing.Size(176, 176);
+            this.imageItem6.TabIndex = 5;
+            // 
+            // imageItem7
+            // 
+            this.imageItem7.Location = new System.Drawing.Point(185, 185);
+            this.imageItem7.Name = "imageItem7";
+            this.imageItem7.Size = new System.Drawing.Size(176, 176);
+            this.imageItem7.TabIndex = 6;
+            // 
+            // imageItem8
+            // 
+            this.imageItem8.Location = new System.Drawing.Point(367, 185);
+            this.imageItem8.Name = "imageItem8";
+            this.imageItem8.Size = new System.Drawing.Size(176, 176);
+            this.imageItem8.TabIndex = 7;
+            // 
+            // imageItem9
+            // 
+            this.imageItem9.Location = new System.Drawing.Point(549, 185);
+            this.imageItem9.Name = "imageItem9";
+            this.imageItem9.Size = new System.Drawing.Size(176, 176);
+            this.imageItem9.TabIndex = 8;
             // 
             // label2
             // 
@@ -575,172 +649,6 @@ namespace OChat
             this.settingIcon.TabIndex = 2;
             this.settingIcon.TabStop = false;
             // 
-            // videoItem1
-            // 
-            this.videoItem1.Location = new System.Drawing.Point(3, 3);
-            this.videoItem1.Name = "videoItem1";
-            this.videoItem1.Size = new System.Drawing.Size(900, 440);
-            this.videoItem1.TabIndex = 0;
-            // 
-            // videoItem2
-            // 
-            this.videoItem2.Location = new System.Drawing.Point(3, 449);
-            this.videoItem2.Name = "videoItem2";
-            this.videoItem2.Size = new System.Drawing.Size(900, 440);
-            this.videoItem2.TabIndex = 1;
-            // 
-            // imageItem1
-            // 
-            this.imageItem1.Location = new System.Drawing.Point(3, 3);
-            this.imageItem1.Name = "imageItem1";
-            this.imageItem1.Size = new System.Drawing.Size(176, 176);
-            this.imageItem1.TabIndex = 0;
-            // 
-            // imageItem2
-            // 
-            this.imageItem2.Location = new System.Drawing.Point(185, 3);
-            this.imageItem2.Name = "imageItem2";
-            this.imageItem2.Size = new System.Drawing.Size(176, 176);
-            this.imageItem2.TabIndex = 1;
-            // 
-            // imageItem3
-            // 
-            this.imageItem3.Location = new System.Drawing.Point(367, 3);
-            this.imageItem3.Name = "imageItem3";
-            this.imageItem3.Size = new System.Drawing.Size(176, 176);
-            this.imageItem3.TabIndex = 2;
-            // 
-            // imageItem4
-            // 
-            this.imageItem4.Location = new System.Drawing.Point(549, 3);
-            this.imageItem4.Name = "imageItem4";
-            this.imageItem4.Size = new System.Drawing.Size(176, 176);
-            this.imageItem4.TabIndex = 3;
-            // 
-            // imageItem5
-            // 
-            this.imageItem5.Location = new System.Drawing.Point(731, 3);
-            this.imageItem5.Name = "imageItem5";
-            this.imageItem5.Size = new System.Drawing.Size(176, 176);
-            this.imageItem5.TabIndex = 4;
-            // 
-            // imageItem6
-            // 
-            this.imageItem6.Location = new System.Drawing.Point(3, 185);
-            this.imageItem6.Name = "imageItem6";
-            this.imageItem6.Size = new System.Drawing.Size(176, 176);
-            this.imageItem6.TabIndex = 5;
-            // 
-            // imageItem7
-            // 
-            this.imageItem7.Location = new System.Drawing.Point(185, 185);
-            this.imageItem7.Name = "imageItem7";
-            this.imageItem7.Size = new System.Drawing.Size(176, 176);
-            this.imageItem7.TabIndex = 6;
-            // 
-            // imageItem8
-            // 
-            this.imageItem8.Location = new System.Drawing.Point(367, 185);
-            this.imageItem8.Name = "imageItem8";
-            this.imageItem8.Size = new System.Drawing.Size(176, 176);
-            this.imageItem8.TabIndex = 7;
-            // 
-            // imageItem9
-            // 
-            this.imageItem9.Location = new System.Drawing.Point(549, 185);
-            this.imageItem9.Name = "imageItem9";
-            this.imageItem9.Size = new System.Drawing.Size(176, 176);
-            this.imageItem9.TabIndex = 8;
-            // 
-            // chatUserControl4
-            // 
-            this.chatUserControl4.BackColor = System.Drawing.Color.White;
-            this.chatUserControl4.Location = new System.Drawing.Point(0, 21);
-            this.chatUserControl4.Margin = new System.Windows.Forms.Padding(2);
-            this.chatUserControl4.Name = "chatUserControl4";
-            this.chatUserControl4.Size = new System.Drawing.Size(340, 98);
-            this.chatUserControl4.TabIndex = 8;
-            // 
-            // chatUserControl9
-            // 
-            this.chatUserControl9.BackColor = System.Drawing.Color.White;
-            this.chatUserControl9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chatUserControl9.Location = new System.Drawing.Point(0, 686);
-            this.chatUserControl9.Margin = new System.Windows.Forms.Padding(2);
-            this.chatUserControl9.Name = "chatUserControl9";
-            this.chatUserControl9.Size = new System.Drawing.Size(323, 98);
-            this.chatUserControl9.TabIndex = 7;
-            // 
-            // chatUserControl8
-            // 
-            this.chatUserControl8.BackColor = System.Drawing.Color.White;
-            this.chatUserControl8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chatUserControl8.Location = new System.Drawing.Point(0, 588);
-            this.chatUserControl8.Margin = new System.Windows.Forms.Padding(2);
-            this.chatUserControl8.Name = "chatUserControl8";
-            this.chatUserControl8.Size = new System.Drawing.Size(323, 98);
-            this.chatUserControl8.TabIndex = 6;
-            // 
-            // chatUserControl7
-            // 
-            this.chatUserControl7.BackColor = System.Drawing.Color.White;
-            this.chatUserControl7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chatUserControl7.Location = new System.Drawing.Point(0, 490);
-            this.chatUserControl7.Margin = new System.Windows.Forms.Padding(2);
-            this.chatUserControl7.Name = "chatUserControl7";
-            this.chatUserControl7.Size = new System.Drawing.Size(323, 98);
-            this.chatUserControl7.TabIndex = 5;
-            // 
-            // chatUserControl6
-            // 
-            this.chatUserControl6.BackColor = System.Drawing.Color.White;
-            this.chatUserControl6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chatUserControl6.Location = new System.Drawing.Point(0, 392);
-            this.chatUserControl6.Margin = new System.Windows.Forms.Padding(2);
-            this.chatUserControl6.Name = "chatUserControl6";
-            this.chatUserControl6.Size = new System.Drawing.Size(323, 98);
-            this.chatUserControl6.TabIndex = 4;
-            // 
-            // chatUserControl5
-            // 
-            this.chatUserControl5.BackColor = System.Drawing.Color.White;
-            this.chatUserControl5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chatUserControl5.Location = new System.Drawing.Point(0, 294);
-            this.chatUserControl5.Margin = new System.Windows.Forms.Padding(2);
-            this.chatUserControl5.Name = "chatUserControl5";
-            this.chatUserControl5.Size = new System.Drawing.Size(323, 98);
-            this.chatUserControl5.TabIndex = 3;
-            // 
-            // chatUserControl3
-            // 
-            this.chatUserControl3.BackColor = System.Drawing.Color.White;
-            this.chatUserControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chatUserControl3.Location = new System.Drawing.Point(0, 196);
-            this.chatUserControl3.Margin = new System.Windows.Forms.Padding(2);
-            this.chatUserControl3.Name = "chatUserControl3";
-            this.chatUserControl3.Size = new System.Drawing.Size(323, 98);
-            this.chatUserControl3.TabIndex = 2;
-            // 
-            // chatUserControl2
-            // 
-            this.chatUserControl2.BackColor = System.Drawing.Color.White;
-            this.chatUserControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chatUserControl2.Location = new System.Drawing.Point(0, 98);
-            this.chatUserControl2.Margin = new System.Windows.Forms.Padding(2);
-            this.chatUserControl2.Name = "chatUserControl2";
-            this.chatUserControl2.Size = new System.Drawing.Size(323, 98);
-            this.chatUserControl2.TabIndex = 1;
-            // 
-            // chatUserControl1
-            // 
-            this.chatUserControl1.BackColor = System.Drawing.Color.White;
-            this.chatUserControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chatUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.chatUserControl1.Margin = new System.Windows.Forms.Padding(2);
-            this.chatUserControl1.Name = "chatUserControl1";
-            this.chatUserControl1.Size = new System.Drawing.Size(323, 98);
-            this.chatUserControl1.TabIndex = 0;
-            // 
             // videoBox1
             // 
             this.videoBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -789,7 +697,6 @@ namespace OChat
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainChatForm";
             this.leftPanel.ResumeLayout(false);
-            this.friendPanel.ResumeLayout(false);
             this.settingPanel.ResumeLayout(false);
             this.userPanel.ResumeLayout(false);
             this.userPanel.PerformLayout();
@@ -852,14 +759,6 @@ namespace OChat
         private VideoItem videoItem2;
         private Panel friendPanel;
         private Panel settingPanel;
-        private ChatUserControl chatUserControl9;
-        private ChatUserControl chatUserControl8;
-        private ChatUserControl chatUserControl7;
-        private ChatUserControl chatUserControl6;
-        private ChatUserControl chatUserControl5;
-        private ChatUserControl chatUserControl3;
-        private ChatUserControl chatUserControl2;
-        private ChatUserControl chatUserControl1;
         private FontAwesome.Sharp.IconButton btnSetting;
         private FontAwesome.Sharp.IconButton btnLogout;
         private Panel rightPanel;

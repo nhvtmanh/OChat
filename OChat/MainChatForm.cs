@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -45,11 +46,44 @@ namespace OChat
             statusImage.BackgroundImage = Image.FromFile(SharedVariables.onlineImagePath);
             Status.Text = "Online";
 
+            LoadUserFriends();
+
             SendMessageUserControl sendMessageUserControl = new SendMessageUserControl();
             sendMessageUserControl.Dock = DockStyle.Fill;
             sendMessageUserControl.BtnEmojiClick += btnEmoji_Click;
             splitContainer.Visible = true;
             splitContainer.Panel2.Controls.Add(sendMessageUserControl);
+        }
+
+        private void LoadUserFriends()
+        {
+            string filePath = SharedVariables.fileDataUserPath;
+            string[] lines = File.ReadAllLines(filePath);
+            foreach (string line in lines)
+            {
+                string[] data = line.Split('|');
+                int userId = int.Parse(data[0]);
+
+                // Skip the current user
+                if (userId == SharedVariables.userID)
+                {
+                    continue;
+                }
+
+                string avatarPath = data[5];
+                string userName = data[1];
+                string statusImagePath = SharedVariables.onlineImagePath;
+                string status = "Online";
+                if (userId % 2 == 0)
+                {
+                    statusImagePath = SharedVariables.offlineImagePath;
+                    status = "Offline";
+                }
+
+                ChatUserControl chatUserControl = new ChatUserControl(userId, avatarPath, userName, statusImagePath, status);
+                chatUserControl.Dock = DockStyle.Top;
+                friendPanel.Controls.Add(chatUserControl);
+            }
         }
 
         private void btnUploadVideo_Click(object sender, EventArgs e)

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChatUserControl));
-            this.Status = new System.Windows.Forms.Label();
+            this.lbStatus = new System.Windows.Forms.Label();
             this.statusImage = new System.Windows.Forms.PictureBox();
             this.Username = new System.Windows.Forms.Label();
             this.Avatar = new System.Windows.Forms.PictureBox();
@@ -37,15 +37,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).BeginInit();
             this.SuspendLayout();
             // 
-            // Status
+            // lbStatus
             // 
-            this.Status.AutoSize = true;
-            this.Status.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Status.Location = new System.Drawing.Point(180, 53);
-            this.Status.Name = "Status";
-            this.Status.Size = new System.Drawing.Size(68, 25);
-            this.Status.TabIndex = 8;
-            this.Status.Text = "Online";
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatus.Location = new System.Drawing.Point(180, 53);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(68, 25);
+            this.lbStatus.TabIndex = 8;
+            this.lbStatus.Text = "Online";
             // 
             // statusImage
             // 
@@ -83,8 +83,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.Status);
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.lbStatus);
             this.Controls.Add(this.statusImage);
             this.Controls.Add(this.Username);
             this.Controls.Add(this.Avatar);
@@ -100,7 +100,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label Status;
+        private System.Windows.Forms.Label lbStatus;
         private System.Windows.Forms.PictureBox statusImage;
         private System.Windows.Forms.Label Username;
         private System.Windows.Forms.PictureBox Avatar;
