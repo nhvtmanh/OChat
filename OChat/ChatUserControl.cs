@@ -39,5 +39,15 @@ namespace OChat
             statusImage.BackgroundImage = Image.FromFile(statusImagePath);
             lbStatus.Text = status;
         }
+
+        private void ChatUserControl_MouseEnter(object sender, EventArgs e)
+        {
+            BackColor = ColorTranslator.FromHtml("#f1f5f9");
+        }
+
+        private void ChatUserControl_MouseLeave(object sender, EventArgs e)
+        {
+            BackColor = Color.Transparent;
+        }
     }
 }
