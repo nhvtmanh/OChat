@@ -272,6 +272,7 @@ namespace OChat
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Size = new System.Drawing.Size(420, 43);
             this.tbSearch.TabIndex = 9;
+            this.tbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_KeyDown);
             // 
             // iconPictureBox1
             // 

@@ -11,9 +11,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using System.Windows.Media;
+using System.Windows.Media.TextFormatting;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using Color = System.Drawing.Color;
+using Control = System.Windows.Forms.Control;
 using Image = System.Drawing.Image;
 using RichTextBox = System.Windows.Forms.RichTextBox;
 
@@ -455,6 +460,68 @@ namespace OChat
         private void btnClose_SettingPanel_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string searchText = tbSearch.Text;
+                Color highlightColor = ColorTranslator.FromHtml("#8DD1F1");
+                bool textFound = false;
+
+                foreach (Control control in flowLayoutPanel.Controls)
+                {
+                    if (control is ChatBox chatBox)
+                    {
+                        foreach (Control innerControl in chatBox.Controls)
+                        {
+                            if (innerControl is RichTextBox richTextBox)
+                            {
+                                // Reset formatting
+                                richTextBox.SelectAll();
+                                richTextBox.SelectionBackColor = richTextBox.BackColor;
+
+                                // Find and highlight text
+                                int startIndex = 0;
+                                while (startIndex < richTextBox.TextLength)
+                                {
+                                    int index = richTextBox.Find(searchText, startIndex, RichTextBoxFinds.None);
+                                    if (index != -1)
+                                    {
+                                        textFound = true;
+                                        richTextBox.SelectionStart = index;
+                                        richTextBox.SelectionLength = searchText.Length;
+                                        richTextBox.SelectionBackColor = highlightColor;
+                                        startIndex = index + searchText.Length;
+                                    }
+                                    else
+                                    {
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (!textFound)
+                {
+                    MessageBox.Show("Text not found!", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        public void SearchAndColorText(RichTextBox richTextBox, string searchText, Color color)
+        {
+            int startIndex = 0;
+            while ((startIndex = richTextBox.Find(searchText, startIndex, RichTextBoxFinds.None)) >= 0)
+            {
+                richTextBox.SelectionStart = startIndex;
+                richTextBox.SelectionLength = searchText.Length;
+                richTextBox.SelectionColor = color;
+
+                startIndex += searchText.Length;
+            }
         }
     }
 }
