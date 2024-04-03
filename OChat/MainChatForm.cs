@@ -55,6 +55,8 @@ namespace OChat
             splitContainer.Panel2.Controls.Add(sendMessageUserControl);
         }
 
+        ChatUserControl lastClickedControl = null;
+
         private void LoadUserFriends()
         {
             string filePath = SharedVariables.fileDataUserPath;
@@ -83,15 +85,46 @@ namespace OChat
                 ChatUserControl chatUserControl = new ChatUserControl(userId, avatarPath, userName, statusImagePath, status);
                 chatUserControl.Dock = DockStyle.Top;
 
-                // Add hover effect to ChatUserControl
+                // Add hover effect for ChatUserControl
                 chatUserControl.MouseEnter += (s, e) =>
                 {
-                    chatUserControl.BackColor = ColorTranslator.FromHtml("#f1f5f9");
+                    ChatUserControl userControl = (ChatUserControl)s;
+                    if (userControl != lastClickedControl)
+                    {
+                        chatUserControl.BackColor = ColorTranslator.FromHtml("#f1f5f9");
+                    }
                 };
 
                 chatUserControl.MouseLeave += (s, e) =>
                 {
-                    chatUserControl.BackColor = Color.Transparent;
+                    ChatUserControl userControl = (ChatUserControl)s;
+
+                    // Only change the BackColor if the UserControl is not the last clicked one
+                    if (userControl != lastClickedControl)
+                    {
+                        userControl.BackColor = Color.Transparent;
+                    }
+                };
+
+                // Process click event for ChatUserControl
+                chatUserControl.MouseClick += (s, e) =>
+                {
+                    // Reset the BackColor of all UserControls
+                    foreach (var control in friendPanel.Controls)
+                    {
+                        if (control is ChatUserControl)
+                        {
+                            ChatUserControl userControl = (ChatUserControl)control;
+                            userControl.BackColor = Color.Transparent; 
+                        }
+                    }
+
+                    // Change the BackColor of the clicked UserControl
+                    ChatUserControl clickedControl = (ChatUserControl)s;
+                    clickedControl.BackColor = ColorTranslator.FromHtml("#e2e8f0");
+
+                    // Store the clicked UserControl
+                    lastClickedControl = clickedControl;
                 };
 
                 friendPanel.Controls.Add(chatUserControl);

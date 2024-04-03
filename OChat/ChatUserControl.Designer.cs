@@ -91,8 +91,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ChatUserControl";
             this.Size = new System.Drawing.Size(340, 98);
-            this.MouseEnter += new System.EventHandler(this.ChatUserControl_MouseEnter);
-            this.MouseLeave += new System.EventHandler(this.ChatUserControl_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.statusImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Avatar)).EndInit();
             this.ResumeLayout(false);
