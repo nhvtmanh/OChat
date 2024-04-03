@@ -58,6 +58,7 @@ namespace OChat
             sendMessageUserControl.Dock = DockStyle.Fill;
             sendMessageUserControl.BtnEmojiClick += btnEmoji_Click;
             sendMessageUserControl.BtnSendClick += btnSend_Click;
+            sendMessageUserControl.BtnUploadImageClick += btnUploadImage_Click;
             splitContainer.Visible = true;
             splitContainer.Panel2.Controls.Add(sendMessageUserControl);
 
@@ -186,6 +187,8 @@ namespace OChat
         {
             int senderID = SharedVariables.userID;
             string filePath = SharedVariables.fileDataMessagePath;
+            string senderAvatarPath = SharedVariables.userAvatarPath;
+
             string[] lines = File.ReadAllLines(filePath);
             foreach (string line in lines)
             {
@@ -196,12 +199,20 @@ namespace OChat
                     if (data[2] == "text")
                     {
                         string currentTime = data[4];
-                        string senderAvatarPath = SharedVariables.userAvatarPath;
                         string message = data[3];
 
                         ChatBox chat = new ChatBox(currentTime, senderAvatarPath, message);
                         chat.Dock = DockStyle.Fill;
                         flowLayoutPanel.Controls.Add(chat);
+                    }
+                    else if (data[2] == "image")
+                    {
+                        string currentTime = data[4];
+                        string imagePath = data[3];
+
+                        ImageBox imageBox = new ImageBox(currentTime, senderAvatarPath, imagePath);
+                        imageBox.Dock = DockStyle.Fill;
+                        flowLayoutPanel.Controls.Add(imageBox);
                     }
                 }
             }
@@ -224,9 +235,38 @@ namespace OChat
             }
         }
 
-        private void btnUploadVideo_Click(object sender, EventArgs e)
+        private void btnUploadImage_Click(object sender, EventArgs e)
         {
+            int senderID = SharedVariables.userID;
+            string senderAvatarPath = SharedVariables.userAvatarPath;
+            int receiverID = lastClickedControl.UserId;
+            string type = "image";
+            string filePath = SharedVariables.fileDataMessagePath;
 
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png";
+            openFileDialog.Multiselect = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                foreach (string file in openFileDialog.FileNames)
+                {
+                    //Display all selected images
+                    string currentTime = DateTime.Now.ToString("dd/MM/yyyy, hh:mm tt");
+                    ImageBox imageBox = new ImageBox(currentTime, senderAvatarPath, file);
+                    imageBox.Dock = DockStyle.Fill;
+                    flowLayoutPanel.Controls.Add(imageBox);
+                    flowLayoutPanel.VerticalScroll.Value = flowLayoutPanel.VerticalScroll.Maximum;
+
+                    //Save the selected images to file
+                    string data = $"{senderID}|{receiverID}|{type}|{file}|{currentTime}";
+
+                    using (StreamWriter sw = new StreamWriter(filePath, true))
+                    {
+                        sw.WriteLine(data);
+                    }
+                }
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
