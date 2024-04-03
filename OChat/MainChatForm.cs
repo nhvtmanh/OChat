@@ -56,9 +56,10 @@ namespace OChat
 
             sendMessageUserControl = new SendMessageUserControl();
             sendMessageUserControl.Dock = DockStyle.Fill;
-            sendMessageUserControl.BtnEmojiClick += btnEmoji_Click;
+            //sendMessageUserControl.BtnEmojiClick += btnEmoji_Click;
             sendMessageUserControl.BtnSendClick += btnSend_Click;
             sendMessageUserControl.BtnUploadImageClick += btnUploadImage_Click;
+            //sendMessageUserControl.BtnEmojiPictureboxClick += btnEmoji_Click;
             splitContainer.Visible = true;
             splitContainer.Panel2.Controls.Add(sendMessageUserControl);
 
@@ -83,7 +84,7 @@ namespace OChat
             //MessageBox.Show(albumPanel.Size.ToString());
         }
 
-        ChatUserControl lastClickedControl = null;
+        public static ChatUserControl lastClickedControl = null;
 
         private void LoadUserFriends()
         {
@@ -214,6 +215,15 @@ namespace OChat
                         imageBox.Dock = DockStyle.Fill;
                         flowLayoutPanel.Controls.Add(imageBox);
                     }
+                    else if (data[2] == "emoji")
+                    {
+                        string currentTime = data[4];
+                        string emojiPath = data[3];
+
+                        EmojiBox emojiBox = new EmojiBox(currentTime, senderAvatarPath, emojiPath);
+                        emojiBox.Dock = DockStyle.Fill;
+                        flowLayoutPanel.Controls.Add(emojiBox);
+                    }
                 }
             }
         }
@@ -281,11 +291,7 @@ namespace OChat
 
         private void btnEmoji_Click(object sender, EventArgs e)
         {
-            //testPanel.Visible = !testPanel.Visible;
-            //if (testPanel.Visible)
-            //{
-            //    testPanel.BringToFront();
-            //}
+            
         }
 
         private void btnSend_Click(object sender, EventArgs e)

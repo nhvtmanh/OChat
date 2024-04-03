@@ -140,6 +140,7 @@ namespace OChat
             this.pemo5.Size = new System.Drawing.Size(38, 38);
             this.pemo5.TabIndex = 4;
             this.pemo5.TabStop = false;
+            this.pemo5.Click += new System.EventHandler(this.pemo_Click);
             // 
             // pemo4
             // 
@@ -150,6 +151,7 @@ namespace OChat
             this.pemo4.Size = new System.Drawing.Size(38, 38);
             this.pemo4.TabIndex = 3;
             this.pemo4.TabStop = false;
+            this.pemo4.Click += new System.EventHandler(this.pemo_Click);
             // 
             // pemo3
             // 
@@ -160,6 +162,7 @@ namespace OChat
             this.pemo3.Size = new System.Drawing.Size(38, 38);
             this.pemo3.TabIndex = 2;
             this.pemo3.TabStop = false;
+            this.pemo3.Click += new System.EventHandler(this.pemo_Click);
             // 
             // pemo2
             // 
@@ -170,6 +173,7 @@ namespace OChat
             this.pemo2.Size = new System.Drawing.Size(38, 38);
             this.pemo2.TabIndex = 1;
             this.pemo2.TabStop = false;
+            this.pemo2.Click += new System.EventHandler(this.pemo_Click);
             // 
             // pemo1
             // 
@@ -180,6 +184,7 @@ namespace OChat
             this.pemo1.Size = new System.Drawing.Size(38, 38);
             this.pemo1.TabIndex = 0;
             this.pemo1.TabStop = false;
+            this.pemo1.Click += new System.EventHandler(this.pemo_Click);
             // 
             // SendMessageUserControl
             // 
