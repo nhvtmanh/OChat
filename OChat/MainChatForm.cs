@@ -333,10 +333,10 @@ namespace OChat
             WindowState = FormWindowState.Minimized;
         }
 
-        private void btnEmoji_Click(object sender, EventArgs e)
-        {
+        //private void btnEmoji_Click(object sender, EventArgs e)
+        //{
             
-        }
+        //}
 
         private void btnSend_Click(object sender, EventArgs e)
         {
@@ -378,6 +378,43 @@ namespace OChat
         {
             splitContainer.Visible = !splitContainer.Visible;
             albumPanel.Visible = !albumPanel.Visible;
+
+            if (albumPanel.Visible)
+            {
+                flImagePanel.Controls.Clear();
+                flVideoPanel.Controls.Clear();
+
+                int senderID = SharedVariables.userID;
+                int receiverID = lastClickedControl.UserId;
+
+                string filePath = SharedVariables.fileDataMessagePath;
+
+                string[] lines = File.ReadAllLines(filePath);
+                foreach (string line in lines)
+                {
+                    string[] data = line.Split('|');
+
+                    if (senderID == int.Parse(data[0]) && receiverID == int.Parse(data[1]))
+                    {
+                        if (data[2] == "image")
+                        {
+                            string currentTime = data[4];
+                            string imagePath = data[3];
+
+                            ImageItem imageItem = new ImageItem(currentTime, imagePath);
+                            flImagePanel.Controls.Add(imageItem);
+                        }
+                        if (data[2] == "video")
+                        {
+                            string currentTime = data[4];
+                            string videoPath = data[3];
+
+                            VideoItem videoItem = new VideoItem(currentTime, videoPath);
+                            flVideoPanel.Controls.Add(videoItem);
+                        }
+                    }
+                }
+            }
         }
 
         private void btnSetting_Click(object sender, EventArgs e)

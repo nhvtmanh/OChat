@@ -16,5 +16,12 @@ namespace OChat
         {
             InitializeComponent();
         }
+
+        public ImageItem(string currentTime, string imagePath)
+        {
+            InitializeComponent();
+            lbTime.Text = currentTime;
+            myImage.BackgroundImage = Image.FromFile(imagePath);
+        }
     }
 }

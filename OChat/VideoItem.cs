@@ -16,5 +16,12 @@ namespace OChat
         {
             InitializeComponent();
         }
+
+        public VideoItem(string currentTime, string videoPath)
+        {
+            InitializeComponent();
+            lbTime.Text = currentTime;
+            myVideo.URL = videoPath;
+        }
     }
 }
