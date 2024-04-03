@@ -82,6 +82,18 @@ namespace OChat
 
                 ChatUserControl chatUserControl = new ChatUserControl(userId, avatarPath, userName, statusImagePath, status);
                 chatUserControl.Dock = DockStyle.Top;
+
+                // Add hover effect to ChatUserControl
+                chatUserControl.MouseEnter += (s, e) =>
+                {
+                    chatUserControl.BackColor = ColorTranslator.FromHtml("#f1f5f9");
+                };
+
+                chatUserControl.MouseLeave += (s, e) =>
+                {
+                    chatUserControl.BackColor = Color.Transparent;
+                };
+
                 friendPanel.Controls.Add(chatUserControl);
             }
         }
