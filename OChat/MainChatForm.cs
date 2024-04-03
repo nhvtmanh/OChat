@@ -429,9 +429,13 @@ namespace OChat
         // Call this method when to switch between TopPanel, MainPanel and MainSettingPanel
         public void DisplayBetweenTopPanel_MainPanel_MainSettingPanel()
         {
-            topPanel.Visible = !topPanel.Visible;
-            MainPanel.Visible = !MainPanel.Visible;
-            MainSettingPanel.Visible = !MainSettingPanel.Visible;
+            if (topPanel.Visible)
+            {
+                topPanel.Visible = !topPanel.Visible;
+                MainPanel.Visible = !MainPanel.Visible;
+                MainSettingPanel.Visible = !MainSettingPanel.Visible;
+                lbHello.Visible = true;
+            }
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
