@@ -42,6 +42,9 @@ namespace OChat
         {
             Avatar.BackgroundImage = Image.FromFile(SharedVariables.userAvatarPath);
             Username.Text = SharedVariables.userName;
+            statusImage.BackgroundImage = Image.FromFile(SharedVariables.onlineImagePath);
+            Status.Text = "Online";
+
             SendMessageUserControl sendMessageUserControl = new SendMessageUserControl();
             sendMessageUserControl.Dock = DockStyle.Fill;
             sendMessageUserControl.BtnEmojiClick += btnEmoji_Click;

@@ -105,6 +105,7 @@ namespace OChat
                 string[] parts = line.Split('|');
                 if (parts[4] == email && parts[2] == password)
                 {
+                    SharedVariables.userID = int.Parse(parts[0]);
                     SharedVariables.userAvatarPath = parts[5];
                     SharedVariables.userName = parts[1];
                     return true;
