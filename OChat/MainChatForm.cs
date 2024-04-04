@@ -156,8 +156,12 @@ namespace OChat
         {
             string filePath = SharedVariables.fileDataUserPath;
             string[] lines = File.ReadAllLines(filePath);
+
+            int i = 0;
+
             foreach (string line in lines)
             {
+                i++;
                 string[] data = line.Split('|');
                 int userId = int.Parse(data[0]);
 
@@ -247,6 +251,11 @@ namespace OChat
                 };
 
                 friendPanel.Controls.Add(chatUserControl);
+
+                //if (i == lines.Length - 1)
+                //{
+                //    chatUserControl.RaiseMouseClick(new MouseEventArgs(MouseButtons.Left, 1, 0, 0, 0));
+                //}
             }
         }
 
@@ -462,6 +471,11 @@ namespace OChat
                 MainSettingPanel.Visible = !MainSettingPanel.Visible;
                 lbSetting.Visible = true;
             }
+            if (topPanel.Visible == false && MainSettingPanel.Visible == false)
+            {
+                MainSettingPanel.Visible = !MainSettingPanel.Visible;
+                lbSetting.Visible = true;
+            }
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -581,6 +595,12 @@ namespace OChat
                 rbVN.Text = "Vietnamese";
                 label1.Text = "Images";
                 label2.Text = "Videos";
+
+                //fix UI when change English language
+                if (btnLogout.Padding.Left == 23)
+                {
+                    btnLogout.Padding = new Padding(12, 2, 0, 6);
+                }
             }
             else
             {
@@ -595,7 +615,10 @@ namespace OChat
                 rbVN.Text = "Tiếng Việt";
                 label1.Text = "Ảnh";
                 label2.Text = "Video";
-            }   
+
+                //fix UI when change Vietnamese language
+                btnLogout.Padding = new Padding(23, 2, 0, 6);
+            }
         }
 
         private void rbEnglish_CheckedChanged(object sender, EventArgs e)

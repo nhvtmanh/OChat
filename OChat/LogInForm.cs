@@ -68,6 +68,10 @@ namespace OChat
                 btnLogIn.Text = "Đăng nhập";
                 btnSignUp.Text = "Đăng ký";
                 btnForgetPass.Text = "Quên mật khẩu";
+
+                //fix UI when change Vietnamese language
+                lbLogin.Location = new Point(this.Size.Width / 2 - lbLogin.Width / 2, lbLogin.Location.Y);
+                btnForgetPass.Location = new Point(this.Size.Width / 2 - btnForgetPass.Width / 2, btnForgetPass.Location.Y);
             }
         }
 
