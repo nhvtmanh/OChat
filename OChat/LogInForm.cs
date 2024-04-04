@@ -47,6 +47,28 @@ namespace OChat
             btnSignUp.ForeColor = ColorTranslator.FromHtml("#ffffff");
             btnSignUp.FlatStyle = FlatStyle.Flat;
             btnSignUp.FlatAppearance.BorderSize = 0;
+
+            UpdateUIBaseOnLanguage();
+        }
+
+        private void UpdateUIBaseOnLanguage()
+        {
+            if (Properties.Settings.Default.isEN)
+            {
+                lbLogin.Text = "Login";
+                lbPass.Text = "Password";
+                btnLogIn.Text = "Log in";
+                btnSignUp.Text = "Sign up";
+                btnForgetPass.Text = "Forgotten password";
+            }
+            else
+            {
+                lbLogin.Text = "Đăng nhập";
+                lbPass.Text = "Mật khẩu";
+                btnLogIn.Text = "Đăng nhập";
+                btnSignUp.Text = "Đăng ký";
+                btnForgetPass.Text = "Quên mật khẩu";
+            }
         }
 
         public event EventHandler ShowSignUpForm

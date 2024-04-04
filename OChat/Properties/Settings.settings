@@ -2,10 +2,10 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="OChat.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="isEN" Type="System.Boolean" Scope="Application">
+    <Setting Name="isEN" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="isLight" Type="System.Boolean" Scope="Application">
+    <Setting Name="isLight" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>

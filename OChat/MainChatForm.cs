@@ -1,13 +1,18 @@
-﻿using System;
+﻿using OChat.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
@@ -46,7 +51,29 @@ namespace OChat
             DoubleBuffered = true;
             ResizeRedraw = true;
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
-            LoadMainChatForm(); 
+            LoadMainChatForm();
+            LoadSettingOptioin();
+        }
+
+        private void LoadSettingOptioin()
+        {
+            if (Properties.Settings.Default.isLight)
+            {
+                   rbLight.Checked = true;
+            }
+            else
+            {
+                rbDark.Checked = true;
+            }
+
+            if (Properties.Settings.Default.isEN)
+            {
+                rbEnglish.Checked = true;
+            }
+            else
+            {
+                rbVN.Checked = true;
+            }
         }
 
         private void LoadMainChatForm()
@@ -55,7 +82,6 @@ namespace OChat
             Username.Text = SharedVariables.userName;
             statusImage.BackgroundImage = Image.FromFile(SharedVariables.onlineImagePath);
             Status.Text = "Online";
-            lbHello.Text = "Hello, " + SharedVariables.userName;
 
             LoadUserFriends();
 
@@ -113,7 +139,7 @@ namespace OChat
 
         private void TestDisplayAlbumPanel()
         {
-            lbHello.Visible = false;
+            lbSetting.Visible = false;
             btnMinimize_rightPanel.Visible = false;
             btnCLose_rightPanel.Visible = false;
             topPanel.Visible = false;
@@ -203,7 +229,7 @@ namespace OChat
                     newChatUserControl.Location = new Point(0, 21);
                     topPanel.Controls.Add(newChatUserControl);
 
-                    lbHello.Visible = false;
+                    lbSetting.Visible = false;
                     btnMinimize_rightPanel.Visible = false;
                     btnCLose_rightPanel.Visible = false;
 
@@ -434,7 +460,7 @@ namespace OChat
                 topPanel.Visible = !topPanel.Visible;
                 MainPanel.Visible = !MainPanel.Visible;
                 MainSettingPanel.Visible = !MainSettingPanel.Visible;
-                lbHello.Visible = true;
+                lbSetting.Visible = true;
             }
         }
 
@@ -525,6 +551,58 @@ namespace OChat
                 richTextBox.SelectionColor = color;
 
                 startIndex += searchText.Length;
+            }
+        }
+
+        private void rbVN_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbVN.Checked)
+            {
+                // Switch language to Vietnamese
+                Properties.Settings.Default.isEN = false;
+                Properties.Settings.Default.Save();
+
+                UpdateUIBaseOnLanguage();
+            }
+        }
+
+        private void UpdateUIBaseOnLanguage()
+        {
+            if (Properties.Settings.Default.isEN)
+            {
+                btnSetting.Text = "Setting";
+                btnLogout.Text = "Logout";
+                lbSetting.Text = "Setting";
+                lbUIMode.Text = "UI Mode";
+                rbLight.Text = "Light";
+                rbDark.Text = "Dark";
+                lbLang.Text = "Language";
+                rbEnglish.Text = "English (United States)";
+                rbVN.Text = "Vietnamese";
+            }
+            else
+            {
+                btnSetting.Text = "Cài đặt";
+                btnLogout.Text = "Đăng xuất";
+                lbSetting.Text = "Cài đặt";
+                lbUIMode.Text = "Giao diện";
+                rbLight.Text = "Sáng";
+                rbDark.Text = "Tối";
+                lbLang.Text = "Ngôn ngữ";
+                rbEnglish.Text = "Tiếng Anh - Mỹ";
+                rbVN.Text = "Tiếng Việt";
+            }   
+        }
+
+        private void rbEnglish_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbEnglish.Checked)
+            {
+                // Switch language to English
+                Properties.Settings.Default.isEN = true;
+                Properties.Settings.Default.Save();
+
+                UpdateUIBaseOnLanguage();
             }
         }
     }

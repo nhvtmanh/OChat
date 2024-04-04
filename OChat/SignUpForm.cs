@@ -50,6 +50,36 @@ namespace OChat
             this.btnUploadImage.ForeColor = ColorTranslator.FromHtml("#ffffff");
             this.btnUploadImage.FlatStyle = FlatStyle.Flat;
             this.btnUploadImage.FlatAppearance.BorderSize = 0;
+
+            UpdateUIBaseOnLanguage();
+        }
+
+        private void UpdateUIBaseOnLanguage()
+        {
+            if (Properties.Settings.Default.isEN)
+            {
+                lbCreate.Text = "Create account";
+                lbName.Text = "Your name";
+                lbPhone.Text = "Phone number";
+                lbEmail.Text = "Email";
+                lbPass.Text = "Password";
+
+                btnLogIn.Text = "Back to Log in";
+                btnSignUp.Text = "Sign up";
+                btnUploadImage.Text = "Choose image";
+            }
+            else
+            {
+                lbCreate.Text = "Tạo tài khoản";
+                lbName.Text = "Họ tên";
+                lbPhone.Text = "Số điện thoại";
+                lbEmail.Text = "Email";
+                lbPass.Text = "Mật khẩu";
+
+                btnLogIn.Text = "Quay lại Đăng nhập";
+                btnSignUp.Text = "Đăng ký";
+                btnUploadImage.Text = "Chọn ảnh";
+            }
         }
 
         public event EventHandler SignUp

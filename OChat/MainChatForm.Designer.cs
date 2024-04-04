@@ -44,29 +44,29 @@ namespace OChat
             this.Avatar = new System.Windows.Forms.PictureBox();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.albumPanel = new System.Windows.Forms.Panel();
+            this.flVideoPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.flImagePanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.topPanel = new System.Windows.Forms.Panel();
             this.btnAlbum = new FontAwesome.Sharp.IconButton();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.btnClose = new FontAwesome.Sharp.IconButton();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
-            this.flVideoPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.flImagePanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.btnCLose_rightPanel = new FontAwesome.Sharp.IconButton();
             this.btnMinimize_rightPanel = new FontAwesome.Sharp.IconButton();
             this.MainSettingPanel = new System.Windows.Forms.Panel();
-            this.lbHello = new System.Windows.Forms.Label();
+            this.lbSetting = new System.Windows.Forms.Label();
             this.panelUIMode = new System.Windows.Forms.Panel();
             this.rbLight = new System.Windows.Forms.RadioButton();
             this.rbDark = new System.Windows.Forms.RadioButton();
             this.panelLang = new System.Windows.Forms.Panel();
             this.rbVN = new System.Windows.Forms.RadioButton();
             this.rbEnglish = new System.Windows.Forms.RadioButton();
-            this.rbLang = new System.Windows.Forms.Label();
+            this.lbLang = new System.Windows.Forms.Label();
             this.lbUIMode = new System.Windows.Forms.Label();
             this.btnClose_SettingPanel = new FontAwesome.Sharp.IconButton();
             this.btnMinimize_SettingPanel = new FontAwesome.Sharp.IconButton();
@@ -248,6 +248,42 @@ namespace OChat
             this.albumPanel.TabIndex = 0;
             this.albumPanel.Visible = false;
             // 
+            // flVideoPanel
+            // 
+            this.flVideoPanel.AutoScroll = true;
+            this.flVideoPanel.Location = new System.Drawing.Point(60, 297);
+            this.flVideoPanel.Name = "flVideoPanel";
+            this.flVideoPanel.Size = new System.Drawing.Size(930, 440);
+            this.flVideoPanel.TabIndex = 3;
+            // 
+            // flImagePanel
+            // 
+            this.flImagePanel.AutoScroll = true;
+            this.flImagePanel.Location = new System.Drawing.Point(60, 60);
+            this.flImagePanel.Name = "flImagePanel";
+            this.flImagePanel.Size = new System.Drawing.Size(930, 185);
+            this.flImagePanel.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(60, 255);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 37);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Videos";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(60, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 37);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Images";
+            // 
             // topPanel
             // 
             this.topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -339,42 +375,6 @@ namespace OChat
             this.btnMinimize.UseVisualStyleBackColor = true;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // flVideoPanel
-            // 
-            this.flVideoPanel.AutoScroll = true;
-            this.flVideoPanel.Location = new System.Drawing.Point(60, 297);
-            this.flVideoPanel.Name = "flVideoPanel";
-            this.flVideoPanel.Size = new System.Drawing.Size(930, 440);
-            this.flVideoPanel.TabIndex = 3;
-            // 
-            // flImagePanel
-            // 
-            this.flImagePanel.AutoScroll = true;
-            this.flImagePanel.Location = new System.Drawing.Point(60, 60);
-            this.flImagePanel.Name = "flImagePanel";
-            this.flImagePanel.Size = new System.Drawing.Size(930, 185);
-            this.flImagePanel.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 255);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 37);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Videos";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(60, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Images";
-            // 
             // MainPanel
             // 
             this.MainPanel.Controls.Add(this.albumPanel);
@@ -436,10 +436,10 @@ namespace OChat
             // MainSettingPanel
             // 
             this.MainSettingPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
-            this.MainSettingPanel.Controls.Add(this.lbHello);
+            this.MainSettingPanel.Controls.Add(this.lbSetting);
             this.MainSettingPanel.Controls.Add(this.panelUIMode);
             this.MainSettingPanel.Controls.Add(this.panelLang);
-            this.MainSettingPanel.Controls.Add(this.rbLang);
+            this.MainSettingPanel.Controls.Add(this.lbLang);
             this.MainSettingPanel.Controls.Add(this.lbUIMode);
             this.MainSettingPanel.Controls.Add(this.btnClose_SettingPanel);
             this.MainSettingPanel.Controls.Add(this.btnMinimize_SettingPanel);
@@ -451,15 +451,15 @@ namespace OChat
             this.MainSettingPanel.TabIndex = 0;
             this.MainSettingPanel.Visible = false;
             // 
-            // lbHello
+            // lbSetting
             // 
-            this.lbHello.AutoSize = true;
-            this.lbHello.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHello.Location = new System.Drawing.Point(153, 35);
-            this.lbHello.Name = "lbHello";
-            this.lbHello.Size = new System.Drawing.Size(159, 54);
-            this.lbHello.TabIndex = 10;
-            this.lbHello.Text = "Setting";
+            this.lbSetting.AutoSize = true;
+            this.lbSetting.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSetting.Location = new System.Drawing.Point(153, 35);
+            this.lbSetting.Name = "lbSetting";
+            this.lbSetting.Size = new System.Drawing.Size(159, 54);
+            this.lbSetting.TabIndex = 10;
+            this.lbSetting.Text = "Setting";
             // 
             // panelUIMode
             // 
@@ -513,6 +513,7 @@ namespace OChat
             this.rbVN.TabIndex = 13;
             this.rbVN.Text = "Vietnamese";
             this.rbVN.UseVisualStyleBackColor = true;
+            this.rbVN.CheckedChanged += new System.EventHandler(this.rbVN_CheckedChanged);
             // 
             // rbEnglish
             // 
@@ -526,16 +527,17 @@ namespace OChat
             this.rbEnglish.TabStop = true;
             this.rbEnglish.Text = "English (United States)";
             this.rbEnglish.UseVisualStyleBackColor = true;
+            this.rbEnglish.CheckedChanged += new System.EventHandler(this.rbEnglish_CheckedChanged);
             // 
-            // rbLang
+            // lbLang
             // 
-            this.rbLang.AutoSize = true;
-            this.rbLang.Font = new System.Drawing.Font("Segoe UI Semibold", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbLang.Location = new System.Drawing.Point(70, 350);
-            this.rbLang.Name = "rbLang";
-            this.rbLang.Size = new System.Drawing.Size(166, 45);
-            this.rbLang.TabIndex = 11;
-            this.rbLang.Text = "Language";
+            this.lbLang.AutoSize = true;
+            this.lbLang.Font = new System.Drawing.Font("Segoe UI Semibold", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLang.Location = new System.Drawing.Point(70, 350);
+            this.lbLang.Name = "lbLang";
+            this.lbLang.Size = new System.Drawing.Size(166, 45);
+            this.lbLang.TabIndex = 11;
+            this.lbLang.Text = "Language";
             // 
             // lbUIMode
             // 
@@ -707,8 +709,8 @@ namespace OChat
         private RadioButton rbDark;
         private RadioButton rbVN;
         private RadioButton rbEnglish;
-        private Label rbLang;
-        private Label lbHello;
+        private Label lbLang;
+        private Label lbSetting;
         private FontAwesome.Sharp.IconButton btnCLose_rightPanel;
         private FontAwesome.Sharp.IconButton btnMinimize_rightPanel;
         private Panel panelUIMode;

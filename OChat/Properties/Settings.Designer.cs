@@ -23,21 +23,27 @@ namespace OChat.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool isEN {
             get {
                 return ((bool)(this["isEN"]));
             }
+            set {
+                this["isEN"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool isLight {
             get {
                 return ((bool)(this["isLight"]));
+            }
+            set {
+                this["isLight"] = value;
             }
         }
     }
