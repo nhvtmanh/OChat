@@ -118,7 +118,7 @@ namespace OChat
             // 
             // settingPanel
             // 
-            this.settingPanel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.settingPanel.BackColor = ColorTranslator.FromHtml("#F0FBFF");
             this.settingPanel.Controls.Add(this.btnLogout);
             this.settingPanel.Controls.Add(this.btnSetting);
             this.settingPanel.Dock = System.Windows.Forms.DockStyle.Bottom;

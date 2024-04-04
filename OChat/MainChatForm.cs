@@ -217,6 +217,7 @@ namespace OChat
                             userControl.BackColor = Color.Transparent; 
                         }
                     }
+                    btnSetting.BackColor = Color.Transparent;
 
                     // Change the BackColor of the clicked UserControl
                     ChatUserControl clickedControl = (ChatUserControl)s;
@@ -459,8 +460,22 @@ namespace OChat
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
+            // At click effect
+            btnSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(234)))), ((int)(((byte)(254)))));
+
             DisplayBetweenTopPanel_MainPanel_MainSettingPanel();
+
+            //Reset color of all ChatUserControl
+            foreach (var control in friendPanel.Controls)
+            {
+                if (control is ChatUserControl)
+                {
+                    ChatUserControl userControl = (ChatUserControl)control;
+                    userControl.BackColor = Color.Transparent;
+                }
+            }
         }
+
         // Call this method when to switch between TopPanel, MainPanel and MainSettingPanel
         public void DisplayBetweenTopPanel_MainPanel_MainSettingPanel()
         {
