@@ -579,6 +579,8 @@ namespace OChat
                 lbLang.Text = "Language";
                 rbEnglish.Text = "English (United States)";
                 rbVN.Text = "Vietnamese";
+                label1.Text = "Images";
+                label2.Text = "Videos";
             }
             else
             {
@@ -591,6 +593,8 @@ namespace OChat
                 lbLang.Text = "Ngôn ngữ";
                 rbEnglish.Text = "Tiếng Anh - Mỹ";
                 rbVN.Text = "Tiếng Việt";
+                label1.Text = "Ảnh";
+                label2.Text = "Video";
             }   
         }
 
