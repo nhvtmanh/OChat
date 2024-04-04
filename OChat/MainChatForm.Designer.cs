@@ -118,7 +118,7 @@ namespace OChat
             // 
             // settingPanel
             // 
-            this.settingPanel.BackColor = ColorTranslator.FromHtml("#F0FBFF");
+            this.settingPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.settingPanel.Controls.Add(this.btnLogout);
             this.settingPanel.Controls.Add(this.btnSetting);
             this.settingPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -343,6 +343,7 @@ namespace OChat
             // 
             // btnClose
             // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.IconChar = FontAwesome.Sharp.IconChar.Xmark;
@@ -355,11 +356,12 @@ namespace OChat
             this.btnClose.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.btnClose.Size = new System.Drawing.Size(51, 50);
             this.btnClose.TabIndex = 5;
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnMinimize
             // 
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
@@ -372,7 +374,7 @@ namespace OChat
             this.btnMinimize.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.btnMinimize.Size = new System.Drawing.Size(51, 50);
             this.btnMinimize.TabIndex = 4;
-            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // MainPanel
@@ -401,6 +403,7 @@ namespace OChat
             // 
             // btnCLose_rightPanel
             // 
+            this.btnCLose_rightPanel.BackColor = System.Drawing.Color.Transparent;
             this.btnCLose_rightPanel.FlatAppearance.BorderSize = 0;
             this.btnCLose_rightPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCLose_rightPanel.IconChar = FontAwesome.Sharp.IconChar.Xmark;
@@ -413,11 +416,12 @@ namespace OChat
             this.btnCLose_rightPanel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.btnCLose_rightPanel.Size = new System.Drawing.Size(51, 50);
             this.btnCLose_rightPanel.TabIndex = 9;
-            this.btnCLose_rightPanel.UseVisualStyleBackColor = true;
+            this.btnCLose_rightPanel.UseVisualStyleBackColor = false;
             this.btnCLose_rightPanel.Click += new System.EventHandler(this.btnCLose_rightPanel_Click);
             // 
             // btnMinimize_rightPanel
             // 
+            this.btnMinimize_rightPanel.BackColor = System.Drawing.Color.Transparent;
             this.btnMinimize_rightPanel.FlatAppearance.BorderSize = 0;
             this.btnMinimize_rightPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize_rightPanel.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
@@ -430,7 +434,7 @@ namespace OChat
             this.btnMinimize_rightPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.btnMinimize_rightPanel.Size = new System.Drawing.Size(51, 50);
             this.btnMinimize_rightPanel.TabIndex = 8;
-            this.btnMinimize_rightPanel.UseVisualStyleBackColor = true;
+            this.btnMinimize_rightPanel.UseVisualStyleBackColor = false;
             this.btnMinimize_rightPanel.Click += new System.EventHandler(this.btnMinimize_rightPanel_Click);
             // 
             // MainSettingPanel
@@ -551,6 +555,7 @@ namespace OChat
             // 
             // btnClose_SettingPanel
             // 
+            this.btnClose_SettingPanel.BackColor = System.Drawing.Color.Transparent;
             this.btnClose_SettingPanel.FlatAppearance.BorderSize = 0;
             this.btnClose_SettingPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose_SettingPanel.IconChar = FontAwesome.Sharp.IconChar.Xmark;
@@ -563,11 +568,12 @@ namespace OChat
             this.btnClose_SettingPanel.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.btnClose_SettingPanel.Size = new System.Drawing.Size(51, 50);
             this.btnClose_SettingPanel.TabIndex = 7;
-            this.btnClose_SettingPanel.UseVisualStyleBackColor = true;
+            this.btnClose_SettingPanel.UseVisualStyleBackColor = false;
             this.btnClose_SettingPanel.Click += new System.EventHandler(this.btnClose_SettingPanel_Click);
             // 
             // btnMinimize_SettingPanel
             // 
+            this.btnMinimize_SettingPanel.BackColor = System.Drawing.Color.Transparent;
             this.btnMinimize_SettingPanel.FlatAppearance.BorderSize = 0;
             this.btnMinimize_SettingPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize_SettingPanel.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
@@ -580,7 +586,7 @@ namespace OChat
             this.btnMinimize_SettingPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.btnMinimize_SettingPanel.Size = new System.Drawing.Size(51, 50);
             this.btnMinimize_SettingPanel.TabIndex = 6;
-            this.btnMinimize_SettingPanel.UseVisualStyleBackColor = true;
+            this.btnMinimize_SettingPanel.UseVisualStyleBackColor = false;
             this.btnMinimize_SettingPanel.Click += new System.EventHandler(this.btnMinimize_SettingPanel_Click);
             // 
             // settingIcon

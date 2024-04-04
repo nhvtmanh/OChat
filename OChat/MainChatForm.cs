@@ -53,6 +53,20 @@ namespace OChat
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 50, 50));
             LoadMainChatForm();
             LoadSettingOptioin();
+
+            btnMinimize_rightPanel.BackColor = Color.Transparent;
+            btnCLose_rightPanel.BackColor = Color.Transparent;
+            btnMinimize_SettingPanel.BackColor = Color.Transparent;
+            btnClose_SettingPanel.BackColor = Color.Transparent;
+            btnMinimize.BackColor = Color.Transparent;
+            btnClose.BackColor = Color.Transparent;
+
+            rightPanel.BackColor = ColorTranslator.FromHtml("#dbeafe");
+
+            //topPanel.BorderStyle = BorderStyle.FixedSingle;
+            //leftPanel.BorderStyle = BorderStyle.FixedSingle;
+            //userPanel.BorderStyle = BorderStyle.FixedSingle;
+            //settingPanel.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private void LoadSettingOptioin()
@@ -221,7 +235,7 @@ namespace OChat
 
                     // Change the BackColor of the clicked UserControl
                     ChatUserControl clickedControl = (ChatUserControl)s;
-                    clickedControl.BackColor = ColorTranslator.FromHtml("#e2e8f0");
+                    clickedControl.BackColor = ColorTranslator.FromHtml("#dbeafe");
 
                     // Store the clicked UserControl
                     lastClickedControl = clickedControl;
